@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [NeweraTEstSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="PatientUser and DoctorFacilityTest(failed)">
+    <classes>
+      <class name="OrderManagement.Newera.serverOrder">
+        <methods>
+          <include name="logintoapp"/>
+          <include name="uploaddocs"/>
+        </methods>
+      </class> <!-- OrderManagement.Newera.serverOrder -->
+    </classes>
+  </test> <!-- PatientUser and DoctorFacilityTest(failed) -->
+</suite> <!-- Failed suite [NeweraTEstSuite] -->
