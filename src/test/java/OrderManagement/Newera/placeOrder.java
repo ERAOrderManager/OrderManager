@@ -288,7 +288,7 @@ public class placeOrder {
 	    driver.findElement(By.xpath("/html/body/div[1]/div/div/div[1]/div/div/div/div[2]/div/div/form/div/div[1]/div[3]/div/div[1]/div/div[1]/input")).sendKeys("444");
 		
 	    driver.switchTo().defaultContent();
-	    Thread.sleep(6000);
+	    Thread.sleep(3000);
 	    
 	    driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/form/div[3]/button")).click();
 	    
