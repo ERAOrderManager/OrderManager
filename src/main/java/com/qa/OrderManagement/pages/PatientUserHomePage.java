@@ -33,6 +33,5 @@ public class PatientUserHomePage extends TestBase{
     WebElement RecordTypeBilling=driver.findElement(By.xpath("//span[starts-with(text(),'Billing') and @class='text-sm font-semibold text-white']"));
     WebElement RecordTypeXRay=driver.findElement(By.xpath("//span[starts-with(text(),'X-Ray') and @class='text-sm font-semibold text-white']"));
     
-
 }
 
