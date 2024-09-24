@@ -3,17 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="OrderManagement.Newera.placeOrder">
+      <class name="com.qa.Ordermanagement.Test.PatientUserOrderTest">
         <methods>
-          <include name="performsubmit"/>
-          <include name="patietflow"/>
-          <include name="keyinpaymentdetails"/>
-          <include name="uploadfileHippa"/>
-          <include name="identity"/>
-          <include name="bpageupload"/>
-          <include name="appsetup"/>
+          <include name="newdocumentRequestTest"/>
+          <include name="setup"/>
+          <include name="getResult"/>
+          <include name="patientuserloginTest"/>
+          <include name="startReporter"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- OrderManagement.Newera.placeOrder -->
+      </class> <!-- com.qa.Ordermanagement.Test.PatientUserOrderTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -9,7 +9,12 @@ public class PatientUserHomePage extends TestBase{
 	
 	WebElement PaymentReminderPrmpt=driver.findElement(By.xpath("/html/body/div[7]/div[3]/div"));
 	WebElement ClosePaymentReminderBtn=driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[2]/button"));
-	WebElement NewDocumentRequest=driver.findElement(By.xpath("//*[@id=\\\"root\\\"]/div/div/div[1]/div[2]/div/div[1]/nav/div[1]/a"));
+	WebElement NewDocumentRequest=driver.findElement(By.xpath("/html/body/div[1]/div/div/div[1]/div[2]/div/div[1]/nav/div[1]"));
+	
+	/*WebElement NewDocumentRequest1=driver.findElement(By.xpath("//*[@id=\\\"root\\\"]/div/div/div[1]/div[2]/div/div[1]/nav/div[1]/a"));
+	/*
+	
+	
 	WebElement SelectTypeDoctorFacility=driver.findElement(By.xpath("//input[@class='radio text-green-600' and @value='1' and @name='selectType']"));
 	WebElement SelectTypeAttorneyOffice=driver.findElement(By.xpath("//input[@class='radio text-green-600' and @value='2' and @name='selectType']"));
 	
@@ -33,5 +38,21 @@ public class PatientUserHomePage extends TestBase{
     WebElement RecordTypeBilling=driver.findElement(By.xpath("//span[starts-with(text(),'Billing') and @class='text-sm font-semibold text-white']"));
     WebElement RecordTypeXRay=driver.findElement(By.xpath("//span[starts-with(text(),'X-Ray') and @class='text-sm font-semibold text-white']"));
     
+    */
+    public PatientUserHomePage() {
+    	
+    }
+    
+    //Actions
+    public void paymentRemainder()
+    {
+        PaymentReminderPrmpt.click();
+    	ClosePaymentReminderBtn.click();    
+   
 }
-
+ 
+    public void newdocumentRequest() 
+    {
+    	NewDocumentRequest.click();
+    }
+}
