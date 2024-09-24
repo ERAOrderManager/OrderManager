@@ -157,8 +157,7 @@ public class placeOrder {
 			
 		WebElement fpage=driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/div/div/div/form/div/div[2]/div[5]/div[3]/div[1]/div/div/div[1]/input"));
 		System.out.println("fpage..displayed..."+fpage.isDisplayed());
-		js.executeScript("arguments[0].click()", fpage);
-		
+		js.executeScript("arguments[0].click()", fpage);		
 		Thread.sleep(2000);
 		String fname1="C:\\Users\\krish\\OneDrive\\Documents\\Vantashala\\3sep.pdf";
 		
