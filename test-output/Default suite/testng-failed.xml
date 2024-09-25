@@ -6,8 +6,8 @@
       <class name="com.qa.Ordermanagement.Test.PatientUserOrderTest">
         <methods>
           <include name="patientuserOrderCreationTest"/>
-          <include name="closebrowsers"/>
           <include name="setup"/>
+          <include name="closebrowsers"/>
         </methods>
       </class> <!-- com.qa.Ordermanagement.Test.PatientUserOrderTest -->
     </classes>
