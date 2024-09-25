@@ -44,7 +44,7 @@ public class TestBase {
 	}
   
    
-   public static void initialization()
+   public static WebDriver initialization()
    {
 	   String browserName = properties.getProperty("browser");
 	   long PAGE_LOAD_TIMEOUT = Long.parseLong(properties.getProperty("PAGE_LOAD_TIME_OUT"));
@@ -65,8 +65,9 @@ public class TestBase {
 	   driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(PAGE_LOAD_TIMEOUT));
 	   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
 	   driver.get(properties.getProperty("AppURL"));
+	   return driver;
    }
-   @BeforeTest
+   //@BeforeTest
    public void startReporter()
    {
        extentSparkReporter  = new ExtentSparkReporter(System.getProperty("user.dir") + "/test-output/extentReport.html");
@@ -80,7 +81,7 @@ public class TestBase {
        extentSparkReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
    }
   
-   @AfterMethod
+  // @AfterMethod
    public void getResult(ITestResult result) {
 	   try {
 		String screenshotPath = Utilities.getScreenshot(driver, "exampleScreenshot");
@@ -101,7 +102,7 @@ public class TestBase {
 	}
        driver.quit();
    }
-   @AfterTest
+  // @AfterTest
    public void tearDown() {
        //to write or update test information to the reporter
        extentReports.flush();

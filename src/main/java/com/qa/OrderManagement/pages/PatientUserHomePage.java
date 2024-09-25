@@ -2,21 +2,34 @@ package com.qa.OrderManagement.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 import com.qa.OrderManagement.base.TestBase;
 
 public class PatientUserHomePage extends TestBase{
 	
+    public PatientUserHomePage() {
+    	PageFactory.initElements(driver, this);
+    	
+    }
+	
 	WebElement PaymentReminderPrmpt=driver.findElement(By.xpath("/html/body/div[7]/div[3]/div"));
 	WebElement ClosePaymentReminderBtn=driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[2]/button"));
 	WebElement NewDocumentRequest=driver.findElement(By.xpath("/html/body/div[1]/div/div/div[1]/div[2]/div/div[1]/nav/div[1]"));
+	
+	//@FindBy()
+	/*
+	 * WebElement SelectTypeDoctorFacility=driver.findElement(By.
+	 * xpath("//input[@class='radio text-green-600' and @value='1' and @name='selectType']"
+	 * )); WebElement SelectTypeAttorneyOffice=driver.findElement(By.
+	 * xpath("//input[@class='radio text-green-600' and @value='2' and @name='selectType']"
+	 * ));
+	 */
 	
 	/*WebElement NewDocumentRequest1=driver.findElement(By.xpath("//*[@id=\\\"root\\\"]/div/div/div[1]/div[2]/div/div[1]/nav/div[1]/a"));
 	/*
 	
 	
-	WebElement SelectTypeDoctorFacility=driver.findElement(By.xpath("//input[@class='radio text-green-600' and @value='1' and @name='selectType']"));
-	WebElement SelectTypeAttorneyOffice=driver.findElement(By.xpath("//input[@class='radio text-green-600' and @value='2' and @name='selectType']"));
 	
 	WebElement ListboxDoctorFacilty=driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/div/div/div/form/div/div[2]/div[2]/div[1]/div/div/div/div[2]/div"));
 	WebElement IndexvalueDFname=driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/div/div/div/form/div/div[2]/div[2]/div[1]/div/div/div[2]/div/div[126]"));
@@ -39,9 +52,7 @@ public class PatientUserHomePage extends TestBase{
     WebElement RecordTypeXRay=driver.findElement(By.xpath("//span[starts-with(text(),'X-Ray') and @class='text-sm font-semibold text-white']"));
     
     */
-    public PatientUserHomePage() {
-    	
-    }
+
     
     //Actions
     public void paymentRemainder()
@@ -54,5 +65,10 @@ public class PatientUserHomePage extends TestBase{
     public void newdocumentRequest() 
     {
     	NewDocumentRequest.click();
+    }
+    
+    public void selectType()
+    {
+    	//SelectTypeAttorneyOffice.click();
     }
 }
