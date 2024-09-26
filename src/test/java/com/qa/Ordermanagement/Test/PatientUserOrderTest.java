@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 import com.qa.OrderManagement.base.TestBase;
 import com.qa.OrderManagement.pages.LoginPage;
 import com.qa.OrderManagement.pages.PatientUserHomePage;
+import com.qa.OrderManagement.pages.PatientUserPaymentPage;
 import com.qa.OrderManagement.utilities.Utilities;
 
 public class PatientUserOrderTest extends TestBase {
@@ -138,6 +139,16 @@ public class PatientUserOrderTest extends TestBase {
 		PatientUserHomePage puhomepage = new PatientUserHomePage(driver);
 		puhomepage.ClickonSubmit();
 		Thread.sleep(5000);
+	}
+	
+	
+	@Test(priority=7,dependsOnMethods= {"clickonsubmitTest"})
+	public void paymentPage() 
+	{
+		PatientUserPaymentPage paymentpage = new PatientUserPaymentPage(driver);
+		paymentpage.enterEmailID("krishnagajula@gmail.com");
+		
+		
 	}
 	
 	public void fileupload(String fname) throws AWTException

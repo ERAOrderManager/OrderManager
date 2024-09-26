@@ -5,12 +5,15 @@
     <classes>
       <class name="com.qa.Ordermanagement.Test.PatientUserOrderTest">
         <methods>
+          <include name="paymentPage"/>
           <include name="patientuserOrderCreationTest"/>
           <include name="uploadHippaDeclaration"/>
-          <include name="setup"/>
           <include name="closebrowsers"/>
+          <include name="setup"/>
           <include name="uploadpassportbackpageTest"/>
+          <include name="clickonsubmitTest"/>
           <include name="uploadpassportfrontTest"/>
+          <include name="checkTermsandConditions"/>
         </methods>
       </class> <!-- com.qa.Ordermanagement.Test.PatientUserOrderTest -->
     </classes>
