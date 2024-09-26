@@ -6,8 +6,11 @@
       <class name="com.qa.Ordermanagement.Test.PatientUserOrderTest">
         <methods>
           <include name="patientuserOrderCreationTest"/>
+          <include name="uploadHippaDeclaration"/>
           <include name="setup"/>
           <include name="closebrowsers"/>
+          <include name="uploadpassportbackpageTest"/>
+          <include name="uploadpassportfrontTest"/>
         </methods>
       </class> <!-- com.qa.Ordermanagement.Test.PatientUserOrderTest -->
     </classes>

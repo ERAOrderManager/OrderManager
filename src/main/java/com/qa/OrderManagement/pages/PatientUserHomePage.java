@@ -51,6 +51,20 @@ public class PatientUserHomePage extends TestBase
     @FindBy(xpath="(//div/div/input[@type='file'])[2]")
     WebElement PassportBpage;
     
+    @FindBy(xpath="(//div/div/input[@type='file'])[3]")
+    WebElement Hiipadeclaration;
+    
+    @FindBy(xpath="//p[text()='Online']")
+    WebElement PaymentTypeOnline;
+    
+    @FindBy(xpath="//p[text()='Check']")
+    WebElement PaymentTypeCheck;
+    
+    @FindBy(xpath="//input[@name='termsAndConditions']")
+    WebElement TermsandCondition;
+    
+    @FindBy(xpath="//button[@type='submit' and text()='Submit Request']")
+    WebElement SubmitButton;
     
     //(//input[contains(@class,'upload-input draggable') and @type='file' ])[1]
     //(//input[contains(@class,'upload-input draggable') and @type='file' ])[2]
@@ -152,7 +166,7 @@ public void selectIdentity() {
 	
 }
 
-public void clickonuploadpassportpage(String page)
+public void clickonuploadpage(String page)
 {
 	JavascriptExecutor mjs = (JavascriptExecutor)driver;
 	if(page.equalsIgnoreCase("PassportFrontPage"))
@@ -162,8 +176,22 @@ public void clickonuploadpassportpage(String page)
 	}else if(page.equalsIgnoreCase("PassportBackPage")) {
 		System.out.println("REached backpage");
 		mjs.executeScript("arguments[0].click()", PassportBpage);
+	}else if(page.equalsIgnoreCase("HippaDeclaration")) {
+		System.out.println("HippaDeclaration");
+		mjs.executeScript("arguments[0].click()", Hiipadeclaration);
 	}
 	
 }
 
+public void TermsandConditon()
+{
+	TermsandCondition.click();
 }
+
+public void ClickonSubmit()
+{
+	SubmitButton.click();
+}
+
+}
+
