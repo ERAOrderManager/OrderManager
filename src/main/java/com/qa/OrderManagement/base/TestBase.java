@@ -20,7 +20,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 
 public class TestBase {
    public static WebDriver driver;
-   public static JavascriptExecutor js = (JavascriptExecutor)driver;
+   //public static JavascriptExecutor js = (JavascriptExecutor)driver;
    public static Properties properties = new Properties();
    public ExtentSparkReporter extentSparkReporter;
    public ExtentReports extentReports;

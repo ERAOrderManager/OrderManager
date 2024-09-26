@@ -21,6 +21,8 @@ import com.qa.OrderManagement.utilities.Utilities;
 public class PatientUserOrderTest extends TestBase {
 	//LoginPage loginpage;
 	//PatientUserHomePage puhomepage;
+	//JavascriptExecutor js = (JavascriptExecutor)driver;
+	String fName2upload="C:\\Users\\krish\\OneDrive\\Documents\\Vantashala\\3sep.pdf";
 	 
 
 	public PatientUserOrderTest() {
@@ -40,7 +42,7 @@ public class PatientUserOrderTest extends TestBase {
 	public void patientuserOrderCreationTest() throws Throwable {
 		LoginPage loginpage = new LoginPage(driver);
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		String fName2upload="C:\\Users\\krish\\OneDrive\\Documents\\Vantashala\\3sep.pdf";
+		
 
 		// System.out.println("from test method");
 		//extentTest = extentReports.createTest("loginPageLogoTest", "View Test Result");
@@ -48,7 +50,7 @@ public class PatientUserOrderTest extends TestBase {
 		Thread.sleep(2000);
 		// puhomepage = new PatientUserHomePage();
 		//Thread.sleep(3000);
-		PatientUserHomePage puhomepage = new PatientUserHomePage();
+		PatientUserHomePage puhomepage = new PatientUserHomePage(driver);
 		//puhomepage.paymentRemainder();
 		//driver.findElement(By.xpath(String.format("//p[normalize-space()='%s']",properties.getProperty("doctorFacility1")))).click();
 		
@@ -76,26 +78,40 @@ public class PatientUserOrderTest extends TestBase {
 		Thread.sleep(2000);
 		js.executeScript("window.scrollBy(0,500)");
 		Thread.sleep(2000);
-		puhomepage.clickonuploadpassportFpage();
-		Thread.sleep(2000);
-		//Utilities util = new Utilities();
-		fileupload(fName2upload);
-		Thread.sleep(2000);
-
+		
 	}
 
-	/*
-	 * @Test(priority=2,dependsOnMethods= {"patientuserOrderCreationTest"}) public
-	 * void newdocumentRequestTest() {
-	 * 
-	 * puhomepage.selectType(); extentTest =
-	 * extentReports.createTest("newdocumentrequestTest", "View Test Result");
-	 * 
-	 * }
-	 */
+	
+	  @Test(priority=2,dependsOnMethods= {"patientuserOrderCreationTest"}) public
+	  void uploadpassportfrontTest() throws InterruptedException, AWTException {
+	  
+		  PatientUserHomePage puhomepage = new PatientUserHomePage(driver);
+		    driver.getWindowHandles(); 
+			puhomepage.clickonuploadpassportpage("PassportFrontPage");
+			Thread.sleep(2000);
+		    fileupload(fName2upload);
+			Thread.sleep(3000);
+		    driver.switchTo().defaultContent();
+			System.out.println("Driver Switched to default Content");
+	  }
+	
+	  @Test(priority=3,dependsOnMethods= {"uploadpassportfrontTest"}) public
+	  void uploadpassportbackpageTest() throws InterruptedException, AWTException {
+	  
+		  PatientUserHomePage puhomepage = new PatientUserHomePage(driver);
+			driver.findElement(By.xpath("(//div[@class='text-center p-2 relative'])[2]")).click();
+			System.out.println("Clicked on the uploadlink");
+			Thread.sleep(2000);
+			puhomepage.clickonuploadpassportpage("PassportBackPage");
+			Thread.sleep(2000);
+		    fileupload(fName2upload);
+			Thread.sleep(3000);
+	  }
+	 
 	
 	public void fileupload(String fname) throws AWTException
 	{
+		JavascriptExecutor jsf = (JavascriptExecutor)driver;
 		Robot r = new Robot();
 		r.setAutoDelay(1000);
 		
@@ -114,11 +130,11 @@ public class PatientUserOrderTest extends TestBase {
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
 		
-		r.setAutoDelay(2000);
-		js.executeScript("window.scrollBy(0,100)");
+		r.setAutoDelay(1000);
+		jsf.executeScript("window.scrollBy(0,-100)");
 		
-		//driver.manage().window().minimize();
-		//driver.manage().window().maximize();
+		driver.manage().window().minimize();
+		driver.manage().window().maximize();
 		
 	}
 	 @AfterClass 

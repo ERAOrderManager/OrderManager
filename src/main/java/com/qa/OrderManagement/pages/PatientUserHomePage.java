@@ -2,6 +2,7 @@ package com.qa.OrderManagement.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,7 +12,8 @@ import com.qa.OrderManagement.base.TestBase;
 public class PatientUserHomePage extends TestBase
 {
 	
-    public PatientUserHomePage() {
+    public PatientUserHomePage(WebDriver driver) {
+    	this.driver=driver;
     	PageFactory.initElements(driver, this);
     	
     }
@@ -45,7 +47,13 @@ public class PatientUserHomePage extends TestBase
     
     @FindBy(xpath="(//div/div/input[@type='file'])[1]")
     WebElement PassportFpage;
+    
+    @FindBy(xpath="(//div/div/input[@type='file'])[2]")
+    WebElement PassportBpage;
+    
+    
     //(//input[contains(@class,'upload-input draggable') and @type='file' ])[1]
+    //(//input[contains(@class,'upload-input draggable') and @type='file' ])[2]
     
     
 	/*
@@ -144,12 +152,18 @@ public void selectIdentity() {
 	
 }
 
-public void clickonuploadpassportFpage()
+public void clickonuploadpassportpage(String page)
 {
-	JavascriptExecutor js = (JavascriptExecutor)driver;
-	js.executeScript("arguments[0].click()", PassportFpage);
+	JavascriptExecutor mjs = (JavascriptExecutor)driver;
+	if(page.equalsIgnoreCase("PassportFrontPage"))
+	{
+	mjs.executeScript("arguments[0].click()", PassportFpage);
 	//PassportFpage.click();
-
+	}else if(page.equalsIgnoreCase("PassportBackPage")) {
+		System.out.println("REached backpage");
+		mjs.executeScript("arguments[0].click()", PassportBpage);
+	}
+	
 }
 
 }
