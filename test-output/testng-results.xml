@@ -1,49 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-27T14:37:00 IST" name="Default suite" finished-at="2024-09-27T14:38:50 IST" duration-ms="110114">
+  <suite started-at="2024-09-27T15:50:30 IST" name="Default suite" finished-at="2024-09-27T15:51:51 IST" duration-ms="80722">
     <groups>
     </groups>
-    <test started-at="2024-09-27T14:37:00 IST" name="Default test" finished-at="2024-09-27T14:38:50 IST" duration-ms="110114">
-      <class name="com.qa.Ordermanagement.Test.PatientUserOrderTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@1e13529a]" started-at="2024-09-27T14:37:00 IST" name="setup" finished-at="2024-09-27T14:37:12 IST" duration-ms="11483" status="PASS">
+    <test started-at="2024-09-27T15:50:30 IST" name="Default test" finished-at="2024-09-27T15:51:51 IST" duration-ms="80722">
+      <class name="OrderManagement.Newera.serverOrder">
+        <test-method signature="logintoapp()[pri:0, instance:OrderManagement.Newera.serverOrder@27b22f74]" started-at="2024-09-27T15:50:30 IST" name="logintoapp" finished-at="2024-09-27T15:51:21 IST" duration-ms="51063" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="patientuserOrderCreationTest()[pri:1, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@1e13529a]" started-at="2024-09-27T14:37:12 IST" name="patientuserOrderCreationTest" finished-at="2024-09-27T14:37:29 IST" duration-ms="17654" status="PASS">
+        </test-method> <!-- logintoapp -->
+        <test-method signature="uploaddocs()[pri:1, instance:OrderManagement.Newera.serverOrder@27b22f74]" started-at="2024-09-27T15:51:21 IST" name="uploaddocs" finished-at="2024-09-27T15:51:51 IST" depends-on-methods="OrderManagement.Newera.serverOrder.logintoapp" duration-ms="29628" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- patientuserOrderCreationTest -->
-        <test-method signature="uploadpassportfrontTest()[pri:2, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@1e13529a]" started-at="2024-09-27T14:37:29 IST" name="uploadpassportfrontTest" finished-at="2024-09-27T14:37:47 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.patientuserOrderCreationTest" duration-ms="17449" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- uploadpassportfrontTest -->
-        <test-method signature="uploadpassportbackpageTest()[pri:3, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@1e13529a]" started-at="2024-09-27T14:37:47 IST" name="uploadpassportbackpageTest" finished-at="2024-09-27T14:38:06 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadpassportfrontTest" duration-ms="19353" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- uploadpassportbackpageTest -->
-        <test-method signature="uploadHippaDeclaration()[pri:4, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@1e13529a]" started-at="2024-09-27T14:38:06 IST" name="uploadHippaDeclaration" finished-at="2024-09-27T14:38:29 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadpassportbackpageTest" duration-ms="23364" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- uploadHippaDeclaration -->
-        <test-method signature="checkTermsandConditions()[pri:5, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@1e13529a]" started-at="2024-09-27T14:38:29 IST" name="checkTermsandConditions" finished-at="2024-09-27T14:38:29 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadHippaDeclaration" duration-ms="67" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkTermsandConditions -->
-        <test-method signature="clickonsubmitTest()[pri:6, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@1e13529a]" started-at="2024-09-27T14:38:29 IST" name="clickonsubmitTest" finished-at="2024-09-27T14:38:35 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.checkTermsandConditions" duration-ms="5108" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickonsubmitTest -->
-        <test-method signature="paymentPage()[pri:7, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@1e13529a]" started-at="2024-09-27T14:38:35 IST" name="paymentPage" finished-at="2024-09-27T14:38:50 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.clickonsubmitTest" duration-ms="15304" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- paymentPage -->
-        <test-method is-config="true" signature="closebrowsers()[pri:0, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@1e13529a]" started-at="2024-09-27T14:38:50 IST" name="closebrowsers" finished-at="2024-09-27T14:38:50 IST" duration-ms="304" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closebrowsers -->
-      </class> <!-- com.qa.Ordermanagement.Test.PatientUserOrderTest -->
+        </test-method> <!-- uploaddocs -->
+      </class> <!-- OrderManagement.Newera.serverOrder -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

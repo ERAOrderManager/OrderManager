@@ -32,7 +32,7 @@ public class serverOrder  {
 		properties.load(fileInputStream);
 		
 		String username = properties.getProperty("DFUserName");
-		String password = properties.getProperty("DFPassword");
+		String password = properties.getProperty("Password");
 		String url = properties.getProperty("AppURL");
 		
 		//driver.get("https://green-beach-0caa2f210.3.azurestaticapps.net/sign-in");
@@ -51,13 +51,14 @@ public class serverOrder  {
 		
 		
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[1]/div[2]/div/div[1]/nav/div[1]/ul/div[1]")).click();
+		driver.findElement(By.xpath("//a[@href='/admin/document-requests/New']")).click();
+				//+ "/html/body/div[1]/div/div/div[1]/div[2]/div/div[1]/nav/div[1]/ul/div[1]")).click();
 				//"//a[@href='/orders/orderReceived' and @xpath='1']")).click();
 		
 		Thread.sleep(6000);
 		//String OrdID=placeOrder.keyinpaymentdetails();
 		//System.out.println("The orderID from Place order "+OrdID);
-		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/div/div/div/div[1]/input")).sendKeys("VIQ-86");
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/div/div/div/div[1]/input")).sendKeys("VIQ-91");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/div/div/div/div[2]/div[1]/table/tbody/tr[1]/td[2]")).click();
 		Thread.sleep(6000);
@@ -100,7 +101,8 @@ public class serverOrder  {
 		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/div[2]/div/div/div/div[2]/div[5]/div/div[2]/div/div/button[1]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("/html/body/div[10]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[2]/div[1]")).click();
-		WebElement fup=driver.findElement(By.xpath("/html/body/div[10]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[2]/div[1]/button"));
+		WebElement fup=driver.findElement(By.xpath("//div/button[@type='button']"));
+				//("/html/body/div[10]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[2]/div[1]/button"));
 		js.executeScript("arguments[0].click()",fup);
 		Thread.sleep(3000);
 		
@@ -109,15 +111,17 @@ public class serverOrder  {
 		fileupload(fname3);
 		Thread.sleep(4000);
 		
-		/*
-		WebElement uploadfile = driver.findElement(By.xpath("/html/body/div[10]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[4]/div[1]/div[2]/button"));
+		
+		WebElement uploadfile = driver.findElement(By.xpath("//button[@aria-label='Upload 1 file' and text()='Upload 1 file']"));
+				//+ "/html/body/div[10]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[4]/div[1]/div[2]/button"));
 		uploadfile.click();
 		
 		Thread.sleep(4000);
 		
-		WebElement done = driver.findElement(By.xpath("/html/body/div[10]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[4]/div[1]/div[3]/button"));
+		WebElement done = driver.findElement(By.xpath("//button[@type='button' and text()='Done']"));
+				//(By.xpath("/html/body/div[10]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[4]/div[1]/div[3]/button"));
 		done.click();
-		*/
+		
 	}
 	
 	public void fileupload(String fname) throws AWTException
