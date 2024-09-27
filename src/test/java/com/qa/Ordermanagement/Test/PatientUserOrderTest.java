@@ -143,13 +143,29 @@ public class PatientUserOrderTest extends TestBase {
 	
 	
 	@Test(priority=7,dependsOnMethods= {"clickonsubmitTest"})
-	public void paymentPage() 
+	public void paymentPage() throws InterruptedException 
 	{
 		PatientUserPaymentPage paymentpage = new PatientUserPaymentPage(driver);
 		paymentpage.enterEmailID("krishnagajula@gmail.com");
-		
+		Thread.sleep(2000);
+		paymentpage.closeextrapopup();
+		Thread.sleep(2000);
+		paymentpage.enterCardnumber("4242424242424242");
+		paymentpage.cardexpiredDate("11/25");
+		paymentpage.enterCVV("123");
+		Thread.sleep(2000);
+		//paymentpage.selectdropcntry("United States");
+		driver.findElement(By.xpath(String.format("//select/option[normalize-space()='%s']","United States"))).click();
+		Thread.sleep(2000);
+		paymentpage.zipcode("30004");
+		Thread.sleep(2000);
+		paymentpage.clickonPaynowbtn();
+		Thread.sleep(2000);
 		
 	}
+	
+	
+	
 	
 	public void fileupload(String fname) throws AWTException
 	{
