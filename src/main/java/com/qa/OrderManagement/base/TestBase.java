@@ -19,7 +19,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import com.aventstack.extentreports.MediaEntityBuilder;
 
 public class TestBase {
-   public static WebDriver driver;
+   public WebDriver driver;
    //public static JavascriptExecutor js = (JavascriptExecutor)driver;
    public static Properties properties = new Properties();
    public ExtentSparkReporter extentSparkReporter;
@@ -44,7 +44,7 @@ public class TestBase {
 	}
   
    
-   public static WebDriver initialization()
+   public  WebDriver initialization()
    {
 	   String browserName = properties.getProperty("browser");
 	   long PAGE_LOAD_TIMEOUT = Long.parseLong(properties.getProperty("PAGE_LOAD_TIME_OUT"));
@@ -67,7 +67,7 @@ public class TestBase {
 	   driver.get(properties.getProperty("AppURL"));
 	   return driver;
    }
-   //@BeforeTest
+   @BeforeTest
    public void startReporter()
    {
        extentSparkReporter  = new ExtentSparkReporter(System.getProperty("user.dir") + "/test-output/extentReport.html");
@@ -81,7 +81,7 @@ public class TestBase {
        extentSparkReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
    }
   
-  // @AfterMethod
+   //@AfterTest
    public void getResult(ITestResult result) {
 	   try {
 		String screenshotPath = Utilities.getScreenshot(driver, "exampleScreenshot");
@@ -102,7 +102,7 @@ public class TestBase {
 	}
        driver.quit();
    }
-  // @AfterTest
+   @AfterTest
    public void tearDown() {
        //to write or update test information to the reporter
        extentReports.flush();

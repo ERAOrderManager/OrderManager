@@ -2,20 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-02T09:17:32 IST" name="Default suite" finished-at="2024-10-02T09:18:54 IST" duration-ms="81428">
+  <suite started-at="2024-10-02T12:35:08 IST" name="Default suite" finished-at="2024-10-02T12:35:16 IST" duration-ms="8107">
     <groups>
     </groups>
-    <test started-at="2024-10-02T09:17:32 IST" name="Default test" finished-at="2024-10-02T09:18:54 IST" duration-ms="81428">
-      <class name="OrderManagement.Newera.serverOrder">
-        <test-method signature="logintoapp()[pri:0, instance:OrderManagement.Newera.serverOrder@27b22f74]" started-at="2024-10-02T09:17:32 IST" name="logintoapp" finished-at="2024-10-02T09:18:24 IST" duration-ms="51803" status="PASS">
+    <test started-at="2024-10-02T12:35:08 IST" name="Default test" finished-at="2024-10-02T12:35:16 IST" duration-ms="8107">
+      <class name="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest">
+        <test-method is-config="true" signature="startReporter()[pri:0, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@1b410b60]" started-at="2024-10-02T12:35:08 IST" name="startReporter" finished-at="2024-10-02T12:35:08 IST" duration-ms="213" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logintoapp -->
-        <test-method signature="uploaddocs()[pri:1, instance:OrderManagement.Newera.serverOrder@27b22f74]" started-at="2024-10-02T09:18:24 IST" name="uploaddocs" finished-at="2024-10-02T09:18:54 IST" depends-on-methods="OrderManagement.Newera.serverOrder.logintoapp" duration-ms="29585" status="PASS">
+        </test-method> <!-- startReporter -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@1b410b60]" started-at="2024-10-02T12:35:08 IST" name="setup" finished-at="2024-10-02T12:35:12 IST" duration-ms="3983" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- uploaddocs -->
-      </class> <!-- OrderManagement.Newera.serverOrder -->
+        </test-method> <!-- setup -->
+        <test-method signature="DoctorFacilityUserLoginTest()[pri:1, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@1b410b60]" started-at="2024-10-02T12:35:12 IST" name="DoctorFacilityUserLoginTest" finished-at="2024-10-02T12:35:14 IST" duration-ms="2261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DoctorFacilityUserLoginTest -->
+        <test-method signature="clickonNewRequestTest()[pri:2, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@1b410b60]" started-at="2024-10-02T12:35:14 IST" name="clickonNewRequestTest" finished-at="2024-10-02T12:35:15 IST" depends-on-methods="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.DoctorFacilityUserLoginTest" duration-ms="1319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickonNewRequestTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@1b410b60]" started-at="2024-10-02T12:35:15 IST" name="tearDown" finished-at="2024-10-02T12:35:16 IST" duration-ms="300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
