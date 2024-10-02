@@ -58,9 +58,10 @@ public class serverOrder  {
 		Thread.sleep(6000);
 		//String OrdID=placeOrder.keyinpaymentdetails();
 		//System.out.println("The orderID from Place order "+OrdID);
-		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/div/div/div/div[1]/input")).sendKeys("VIQ-91");
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/div/div/div/div[2]/div[1]/table/tbody/tr[1]/td[2]")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/div/div/div/div[1]/input")).sendKeys("VIQ-92");
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//a[contains(@href,'/admin/document-request/')]")).click();
+				//("/html/body/div[1]/div/div/div[2]/div/div/main/div/div/div/div/div[2]/div[1]/table/tbody/tr[1]/td[2]")).click();
 		Thread.sleep(6000);
 		
 		String OrdID=driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/div[1]/div/div/div/div[1]/div[1]/div[1]/p[2]")).getText();

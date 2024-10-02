@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-27T15:50:30 IST" name="Default suite" finished-at="2024-09-27T15:51:51 IST" duration-ms="80722">
+  <suite started-at="2024-10-02T09:17:32 IST" name="Default suite" finished-at="2024-10-02T09:18:54 IST" duration-ms="81428">
     <groups>
     </groups>
-    <test started-at="2024-09-27T15:50:30 IST" name="Default test" finished-at="2024-09-27T15:51:51 IST" duration-ms="80722">
+    <test started-at="2024-10-02T09:17:32 IST" name="Default test" finished-at="2024-10-02T09:18:54 IST" duration-ms="81428">
       <class name="OrderManagement.Newera.serverOrder">
-        <test-method signature="logintoapp()[pri:0, instance:OrderManagement.Newera.serverOrder@27b22f74]" started-at="2024-09-27T15:50:30 IST" name="logintoapp" finished-at="2024-09-27T15:51:21 IST" duration-ms="51063" status="PASS">
+        <test-method signature="logintoapp()[pri:0, instance:OrderManagement.Newera.serverOrder@27b22f74]" started-at="2024-10-02T09:17:32 IST" name="logintoapp" finished-at="2024-10-02T09:18:24 IST" duration-ms="51803" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logintoapp -->
-        <test-method signature="uploaddocs()[pri:1, instance:OrderManagement.Newera.serverOrder@27b22f74]" started-at="2024-09-27T15:51:21 IST" name="uploaddocs" finished-at="2024-09-27T15:51:51 IST" depends-on-methods="OrderManagement.Newera.serverOrder.logintoapp" duration-ms="29628" status="PASS">
+        <test-method signature="uploaddocs()[pri:1, instance:OrderManagement.Newera.serverOrder@27b22f74]" started-at="2024-10-02T09:18:24 IST" name="uploaddocs" finished-at="2024-10-02T09:18:54 IST" depends-on-methods="OrderManagement.Newera.serverOrder.logintoapp" duration-ms="29585" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- uploaddocs -->
