@@ -29,6 +29,9 @@ WebElement searchField;
 @FindBy(xpath="(//a[contains(@href,'/admin/document-request/')])[1]")
 WebElement openOrder;
 
+@FindBy(xpath="//p[2][contains(@class,'text-white ')]")
+WebElement RequestID;
+
 
 public void clickonnewRequest()
 {	
@@ -49,6 +52,14 @@ public void clickOrderid()
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[contains(@href,'/admin/document-request/')])[1]")));
 	openOrder.click();
+}
+
+public String FetchRequestID()
+{
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[2][contains(@class,'text-white ')]")));
+	String requestid=RequestID.getText();
+	return requestid;
 }
 
 }

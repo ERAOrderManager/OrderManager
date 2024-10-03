@@ -1,5 +1,6 @@
 package com.qa.Ordermanagement.Test;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.qa.OrderManagement.pages.LoginPage;
@@ -56,6 +57,17 @@ public void clickonSearchoption()
 	 extentTest = extentReports.createTest("clickonOrderID", "Got executed");
 	 Thread.sleep(3000);
  }
-	
+
+@Test(priority = 5,dependsOnMethods = {"clickonOrderID"})
+public void fetchOrderID()
+{
+	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
+	String rID=Dhomepage.FetchRequestID();
+	System.out.println("RequestID: "+rID);
+	extentTest = extentReports.createTest("fetchOrderID not Matched", "Got executed");
+	Assert.assertEquals(rID, "OrderID");
+
+
+}
 }
 

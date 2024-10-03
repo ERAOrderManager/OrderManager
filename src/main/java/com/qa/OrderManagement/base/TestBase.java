@@ -81,7 +81,7 @@ public class TestBase {
        extentSparkReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
    }
   
-   //@AfterTest
+   @AfterMethod
    public void getResult(ITestResult result) {
 	   try {
 		String screenshotPath = Utilities.getScreenshot(driver, "exampleScreenshot");
@@ -100,7 +100,7 @@ public class TestBase {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-       driver.quit();
+       //driver.quit();
    }
    @AfterTest
    public void tearDown() {
