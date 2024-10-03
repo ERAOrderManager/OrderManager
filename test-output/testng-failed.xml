@@ -6,11 +6,12 @@
       <class name="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest">
         <methods>
           <include name="setup"/>
-          <include name="getResult"/>
+          <include name="clickonSearchoption"/>
           <include name="DoctorFacilityUserLoginTest"/>
-          <include name="clickonNewRequestTest"/>
-          <include name="tearDown"/>
+          <include name="clickonOrderID"/>
           <include name="startReporter"/>
+          <include name="tearDown"/>
+          <include name="clickonNewRequestTest"/>
         </methods>
       </class> <!-- com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest -->
     </classes>

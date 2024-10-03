@@ -23,12 +23,32 @@ public DoctorFacilityHomePage(WebDriver driver)
 @FindBy(xpath="//a[@href='/admin/document-requests/New']")
 WebElement NewRequest;
 
+@FindBy(xpath="//div[1]/input[contains(@placeholder,'Search..') and @type='text']")
+WebElement searchField;
+
+@FindBy(xpath="(//a[contains(@href,'/admin/document-request/')])[1]")
+WebElement openOrder;
+
 
 public void clickonnewRequest()
-{
-	
+{	
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='/admin/document-requests/New']")));
 	NewRequest.click();
 }
+
+public void searchField(String orderID)
+{
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[1]/input[contains(@placeholder,'Search..') and @type='text']")));
+	searchField.sendKeys(orderID);
+}
+
+public void clickOrderid()
+{
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[contains(@href,'/admin/document-request/')])[1]")));
+	openOrder.click();
+}
+
 }
