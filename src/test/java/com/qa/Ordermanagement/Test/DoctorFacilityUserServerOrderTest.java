@@ -65,9 +65,18 @@ public void fetchOrderID()
 	String rID=Dhomepage.FetchRequestID();
 	System.out.println("RequestID: "+rID);
 	extentTest = extentReports.createTest("fetchOrderID not Matched", "Got executed");
-	Assert.assertEquals(rID, "OrderID");
+	Assert.assertEquals(rID, OrderID);
 
 
+}
+@Test(priority = 6,dependsOnMethods = {"fetchOrderID"})
+public void selectInternalstatusTest() throws InterruptedException
+{
+	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
+	extentTest = extentReports.createTest("selectInternalstatusTest", "Got executed");
+	Dhomepage.selectInternalStatus();
+	Thread.sleep(3000);
+	
 }
 }
 

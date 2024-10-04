@@ -32,6 +32,12 @@ WebElement openOrder;
 @FindBy(xpath="//p[2][contains(@class,'text-white ')]")
 WebElement RequestID;
 
+@FindBy(xpath="(//div[@class='select__indicators css-1wy0on6'] )[3]")
+WebElement clickListItem;
+
+@FindBy(xpath="//span[text()='Approved' and @class='ml-2'] ")
+WebElement SelectApproved;
+
 
 public void clickonnewRequest()
 {	
@@ -62,4 +68,9 @@ public String FetchRequestID()
 	return requestid;
 }
 
+public void selectInternalStatus()
+{
+	clickListItem.click();
+	SelectApproved.click();
+}
 }
