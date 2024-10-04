@@ -38,6 +38,17 @@ WebElement clickListItem;
 @FindBy(xpath="//span[text()='Approved' and @class='ml-2'] ")
 WebElement SelectApproved;
 
+@FindBy(xpath="//button[@type='submit' and text()='Update Order Details']")
+WebElement updateOrderDetails;
+
+@FindBy(xpath="//div[text()='Files']")
+WebElement clickFilesTab;
+
+@FindBy(xpath="//button[text()='Confirm']")
+WebElement popupConfirmButton;
+
+@FindBy(xpath="//button[text()='Cancel']")
+WebElement popupCancelButton;
 
 public void clickonnewRequest()
 {	
@@ -72,5 +83,15 @@ public void selectInternalStatus()
 {
 	clickListItem.click();
 	SelectApproved.click();
+}
+
+public void updateOrderDetails()
+{
+	updateOrderDetails.click();
+}
+
+public void clickonFileTab()
+{
+	clickFilesTab.click();
 }
 }
