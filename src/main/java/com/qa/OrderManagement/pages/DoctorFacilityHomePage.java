@@ -52,28 +52,28 @@ WebElement popupCancelButton;
 
 public void clickonnewRequest()
 {	
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='/admin/document-requests/New']")));
 	NewRequest.click();
 }
 
 public void searchField(String orderID)
 {
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[1]/input[contains(@placeholder,'Search..') and @type='text']")));
 	searchField.sendKeys(orderID);
 }
 
 public void clickOrderid()
 {
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[contains(@href,'/admin/document-request/')])[1]")));
 	openOrder.click();
 }
 
 public String FetchRequestID()
 {
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[2][contains(@class,'text-white ')]")));
 	String requestid=RequestID.getText();
 	return requestid;

@@ -67,44 +67,33 @@ public class TestBase {
 	   driver.get(properties.getProperty("AppURL"));
 	   return driver;
    }
-   @BeforeTest
-   public void startReporter()
-   {
-       extentSparkReporter  = new ExtentSparkReporter(System.getProperty("user.dir") + "/test-output/extentReport.html");
-       extentReports = new ExtentReports();
-       extentReports.attachReporter(extentSparkReporter);
-       //configuration items to change the look and feel
-       //add content, manage tests etc
-       extentSparkReporter.config().setDocumentTitle("Order Management Test Report");
-       extentSparkReporter.config().setReportName("Order Management Test Report Summary");
-       extentSparkReporter.config().setTheme(Theme.STANDARD);
-       extentSparkReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
-   }
-  
-   @AfterMethod
-   public void getResult(ITestResult result) {
-	   try {
-		String screenshotPath = Utilities.getScreenshot(driver, "exampleScreenshot");
-		if(result.getStatus() == ITestResult.FAILURE) {
-	          extentTest.log(Status.FAIL,result.getThrowable());
-	          extentTest.fail("Screenshot captured",MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-	        		  
-	       }
-	       else if(result.getStatus() == ITestResult.SUCCESS) {
-	           extentTest.log(Status.PASS, result.getTestName());
-	       }
-	       else {
-	           extentTest.log(Status.SKIP, result.getTestName());
-	       }
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-       //driver.quit();
-   }
-   @AfterTest
-   public void tearDown() {
-       //to write or update test information to the reporter
-       extentReports.flush();
-   }
+	/*
+	 * @BeforeTest public void startReporter() { extentSparkReporter = new
+	 * ExtentSparkReporter(System.getProperty("user.dir") +
+	 * "/test-output/extentReport.html"); extentReports = new ExtentReports();
+	 * extentReports.attachReporter(extentSparkReporter); //configuration items to
+	 * change the look and feel //add content, manage tests etc
+	 * extentSparkReporter.config().setDocumentTitle("Order Management Test Report"
+	 * ); extentSparkReporter.config().
+	 * setReportName("Order Management Test Report Summary");
+	 * extentSparkReporter.config().setTheme(Theme.STANDARD);
+	 * extentSparkReporter.config().
+	 * setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'"); }
+	 * 
+	 * @AfterMethod public void getResult(ITestResult result) { try { String
+	 * screenshotPath = Utilities.getScreenshot(driver, "exampleScreenshot");
+	 * if(result.getStatus() == ITestResult.FAILURE) {
+	 * extentTest.log(Status.FAIL,result.getThrowable());
+	 * extentTest.fail("Screenshot captured",MediaEntityBuilder.
+	 * createScreenCaptureFromPath(screenshotPath).build());
+	 * 
+	 * } else if(result.getStatus() == ITestResult.SUCCESS) {
+	 * extentTest.log(Status.PASS, result.getTestName()); } else {
+	 * extentTest.log(Status.SKIP, result.getTestName()); } } catch (IOException e)
+	 * { // TODO Auto-generated catch block e.printStackTrace(); } //driver.quit();
+	 * }
+	 * 
+	 * @AfterTest public void tearDown() { //to write or update test information to
+	 * the reporter extentReports.flush(); }
+	 */
 }

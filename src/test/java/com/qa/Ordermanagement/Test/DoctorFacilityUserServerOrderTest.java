@@ -2,11 +2,14 @@ package com.qa.Ordermanagement.Test;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.qa.OrderManagement.pages.LoginPage;
 import com.qa.OrderManagement.pages.DoctorFacilityHomePage;
-
+import com.qa.OrderManagement.Reports.TestListener;
 import com.qa.OrderManagement.base.TestBase;
+
+@Listeners(TestListener.class)
 
 public class DoctorFacilityUserServerOrderTest extends TestBase {
 	//LoginPage loginpage = new LoginPage(driver);
@@ -27,14 +30,14 @@ public class DoctorFacilityUserServerOrderTest extends TestBase {
   {
 	  LoginPage loginpage = new LoginPage(driver);
 	  loginpage.login(properties.getProperty("doctorFacilityUser"), properties.getProperty("Password"));
-	  extentTest = extentReports.createTest("DoctorFacilityUserLoginTest", "Got executed");
+	  //extentTest = extentReports.createTest("DoctorFacilityUserLoginTest", "Got executed");
 	  Thread.sleep(2000);	  
   }
   
 @Test(priority = 2,dependsOnMethods = {"DoctorFacilityUserLoginTest"})
 public void clickonNewRequestTest() throws InterruptedException
 {
-	  extentTest = extentReports.createTest("clickonNewRequestTest", "Got executed");
+	  //extentTest = extentReports.createTest("clickonNewRequestTest", "Got executed");
 	  DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	  Dhomepage.clickonnewRequest();
 	  Thread.sleep(3000);
@@ -46,7 +49,7 @@ public void clickonSearchoption()
 {
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	Dhomepage.searchField(OrderID);
-	extentTest = extentReports.createTest("clickonSearchoption", "Got executed");
+	//extentTest = extentReports.createTest("clickonSearchoption", "Got executed");
 }
 
 @Test(priority = 4,dependsOnMethods = {"clickonSearchoption"})
@@ -54,7 +57,7 @@ public void clickonSearchoption()
  {
 	 DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	 Dhomepage.clickOrderid();
-	 extentTest = extentReports.createTest("clickonOrderID", "Got executed");
+	 //extentTest = extentReports.createTest("clickonOrderID", "Got executed");
 	 Thread.sleep(3000);
  }
 
@@ -64,7 +67,7 @@ public void fetchOrderID()
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	String rID=Dhomepage.FetchRequestID();
 	System.out.println("RequestID: "+rID);
-	extentTest = extentReports.createTest("fetchOrderID not Matched", "Got executed");
+	//extentTest = extentReports.createTest("fetchOrderID not Matched", "Got executed");
 	Assert.assertEquals(rID, OrderID);
 
 
@@ -73,7 +76,7 @@ public void fetchOrderID()
 public void selectInternalstatusTest() throws InterruptedException
 {
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
-	extentTest = extentReports.createTest("selectInternalstatusTest", "Got executed");
+	//extentTest = extentReports.createTest("selectInternalstatusTest", "Got executed");
 	Dhomepage.selectInternalStatus();
 	Thread.sleep(3000);
 	

@@ -5,15 +5,13 @@
     <classes>
       <class name="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest">
         <methods>
+          <include name="selectInternalstatusTest"/>
           <include name="setup"/>
           <include name="fetchOrderID"/>
-          <include name="getResult"/>
           <include name="clickonSearchoption"/>
           <include name="DoctorFacilityUserLoginTest"/>
           <include name="clickonOrderID"/>
-          <include name="tearDown"/>
           <include name="clickonNewRequestTest"/>
-          <include name="startReporter"/>
         </methods>
       </class> <!-- com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest -->
     </classes>
