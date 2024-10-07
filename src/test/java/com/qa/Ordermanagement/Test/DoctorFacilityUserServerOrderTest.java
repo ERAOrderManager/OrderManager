@@ -14,7 +14,7 @@ import com.qa.OrderManagement.base.TestBase;
 public class DoctorFacilityUserServerOrderTest extends TestBase {
 	//LoginPage loginpage = new LoginPage(driver);
 	//DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
-	public String OrderID ="VIQ-93";
+	public String OrderID ="VIQ-95";
 	public DoctorFacilityUserServerOrderTest() {
 		super();
 		
@@ -88,5 +88,21 @@ public void updateOrderDetails()
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	Dhomepage.updateOrderDetailsDetailspage();
 }
+
+@Test(priority = 8,dependsOnMethods = {"updateOrderDetails"})
+public void clickonfiletab() 
+
+{
+	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
+	Dhomepage.clickonFileTab();
 }
 
+@Test(priority = 9,dependsOnMethods = {"clickonfiletab"})
+public void uploadfiles() 
+
+{
+	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
+	Dhomepage.uploadfromfiletab();
+}
+
+}

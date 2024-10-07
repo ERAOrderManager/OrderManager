@@ -103,4 +103,11 @@ public void clickonFileTab()
 	updateOrderDetails.click();
 	clickFilesTab.click();
 }
+public void uploadfromfiletab()
+{
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Upload']")));
+	upload.click();
+}
+
 }

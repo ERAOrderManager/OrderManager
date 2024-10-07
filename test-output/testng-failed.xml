@@ -7,10 +7,13 @@
         <methods>
           <include name="selectInternalstatusTest"/>
           <include name="setup"/>
+          <include name="uploadfiles"/>
+          <include name="clickonfiletab"/>
           <include name="fetchOrderID"/>
           <include name="clickonSearchoption"/>
           <include name="DoctorFacilityUserLoginTest"/>
           <include name="clickonOrderID"/>
+          <include name="updateOrderDetails"/>
           <include name="clickonNewRequestTest"/>
         </methods>
       </class> <!-- com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest -->

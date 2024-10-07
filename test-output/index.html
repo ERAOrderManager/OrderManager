@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\krish\AppData\Local\Temp\testng-eclipse-824732799\testng-customsuite.xml</span>
+                    <span>C:\Users\krish\AppData\Local\Temp\testng-eclipse-1072715762\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,35 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,   7 passed</span>
+                    <span class="method-stats">9 methods, 1 failed,  1 skipped,  7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest" class="method navigator-link" hash-for-method="clickonfiletab">clickonfiletab</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Default_suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest" class="method navigator-link" hash-for-method="uploadfiles">uploadfiles</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -148,6 +176,120 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickonfiletab">
+                  </a> <!-- clickonfiletab -->
+                  <span class="method-name">clickonfiletab</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;tab-nav tab-nav-underline hover:text-green-600 dark:hover:text-green-100&quot; role=&quot;tab&quot; aria-selected=&quot;false&quot;&gt;...&lt;/div&gt; is not clickable at point (480, 23). Other element would receive the click: &lt;input class=&quot;input input-sm h-9 focus:ring-green-600 focus-within:ring-green-600 focus-within:border-green-600 focus:border-green-600 w-52&quot; type=&quot;text&quot; placeholder=&quot;Search...&quot; style=&quot;outline: none;&quot;&gt;
+  (Session info: chrome=129.0.6668.90)
+Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [95f2ae56fd339b7c2c04a7ea66d570bd, clickElement {id=f.86E6E6EE44C2BC78278AECD1475C407E.d.5E4F1B60DB3EFCB6043E5B0F85845F78.e.173}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\krish\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52721}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52721/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (95f2ae56fd339b7c2c04a7ea66d570bd)] -&gt; xpath: //div[text()=&apos;Files&apos;]]
+Session ID: 95f2ae56fd339b7c2c04a7ea66d570bd
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+	at com.qa.OrderManagement.pages.DoctorFacilityHomePage.clickonFileTab(DoctorFacilityHomePage.java:104)
+	at com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.clickonfiletab(DoctorFacilityUserServerOrderTest.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="uploadfiles">
+                  </a> <!-- uploadfiles -->
+                  <span class="method-name">uploadfiles</span>
+                  <div class="stack-trace">java.lang.Throwable: Method com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.uploadfiles() on instance com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@1e13529a depends on not successfully finished methods 
+[com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.clickonfiletab() on instance com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@1e13529a]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:156)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-skipped -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -208,7 +350,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\krish\AppData\Local\Temp\testng-eclipse-824732799\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\krish\AppData\Local\Temp\testng-eclipse-1072715762\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -257,40 +399,48 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(7);
+data.addRows(9);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'clickonNewRequestTest')
+data.setCell(0, 1, 'clickonfiletab')
 data.setCell(0, 2, 'com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest')
-data.setCell(0, 3, 4246);
+data.setCell(0, 3, 9785);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'selectInternalstatusTest')
+data.setCell(1, 1, 'clickonNewRequestTest')
 data.setCell(1, 2, 'com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest')
-data.setCell(1, 3, 3171);
+data.setCell(1, 3, 3982);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'clickonOrderID')
+data.setCell(2, 1, 'selectInternalstatusTest')
 data.setCell(2, 2, 'com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest')
-data.setCell(2, 3, 3113);
+data.setCell(2, 3, 3143);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'DoctorFacilityUserLoginTest')
+data.setCell(3, 1, 'clickonOrderID')
 data.setCell(3, 2, 'com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest')
-data.setCell(3, 3, 2599);
+data.setCell(3, 3, 3121);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'clickonSearchoption')
+data.setCell(4, 1, 'DoctorFacilityUserLoginTest')
 data.setCell(4, 2, 'com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest')
-data.setCell(4, 3, 184);
+data.setCell(4, 3, 2568);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'updateOrderDetails')
+data.setCell(5, 1, 'clickonSearchoption')
 data.setCell(5, 2, 'com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest')
-data.setCell(5, 3, 89);
+data.setCell(5, 3, 187);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'fetchOrderID')
+data.setCell(6, 1, 'updateOrderDetails')
 data.setCell(6, 2, 'com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest')
-data.setCell(6, 3, 64);
+data.setCell(6, 3, 96);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'fetchOrderID')
+data.setCell(7, 2, 'com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest')
+data.setCell(7, 3, 46);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'uploadfiles')
+data.setCell(8, 2, 'com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest')
+data.setCell(8, 3, 0);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 22 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -323,31 +473,37 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">DoctorFacilityUserLoginTest</span>
-                <span class="method-start">5724 ms</span>
+                <span class="method-start">3830 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">clickonNewRequestTest</span>
-                <span class="method-start">8335 ms</span>
+                <span class="method-start">6411 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">clickonSearchoption</span>
-                <span class="method-start">12581 ms</span>
+                <span class="method-start">10393 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">clickonOrderID</span>
-                <span class="method-start">12768 ms</span>
+                <span class="method-start">10580 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">fetchOrderID</span>
-                <span class="method-start">15882 ms</span>
+                <span class="method-start">13701 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">selectInternalstatusTest</span>
-                <span class="method-start">15949 ms</span>
+                <span class="method-start">13749 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">updateOrderDetails</span>
-                <span class="method-start">19120 ms</span>
+                <span class="method-start">16892 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">clickonfiletab</span>
+                <span class="method-start">16990 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
