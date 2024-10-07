@@ -19,7 +19,7 @@ public class ReportTestManager {
 	public static synchronized ExtentTest startTest(String testName, String className) {
 		ExtentTest test = extent.createTest(testName, className);
 		extentTestMap.put((int) (long) (Thread.currentThread().getId()), test);
-		test.assignAuthor("Krishna");
+		test.assignAuthor("AutoBotCris");
 		test.assignCategory(className);	
 		return test;
 	}

@@ -81,5 +81,12 @@ public void selectInternalstatusTest() throws InterruptedException
 	Thread.sleep(3000);
 	
 }
+
+@Test(priority = 7,dependsOnMethods = {"selectInternalstatusTest"})
+public void updateOrderDetails()
+{
+	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
+	Dhomepage.updateOrderDetailsDetailspage();
+}
 }
 

@@ -50,6 +50,9 @@ WebElement popupConfirmButton;
 @FindBy(xpath="//button[text()='Cancel']")
 WebElement popupCancelButton;
 
+@FindBy(xpath="//span[text()='Upload']")
+WebElement upload;
+
 public void clickonnewRequest()
 {	
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
@@ -85,13 +88,19 @@ public void selectInternalStatus()
 	SelectApproved.click();
 }
 
-public void updateOrderDetails()
+public void updateOrderDetailsDetailspage()
+
 {
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='submit' and text()='Update Order Details']")));
 	updateOrderDetails.click();
 }
 
 public void clickonFileTab()
 {
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Files']")));
+	updateOrderDetails.click();
 	clickFilesTab.click();
 }
 }
