@@ -11,18 +11,18 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.qa.OrderManagement.Reports.TestListener;
 import com.qa.OrderManagement.base.TestBase;
 import com.qa.OrderManagement.pages.LoginPage;
 import com.qa.OrderManagement.pages.PatientUserHomePage;
 import com.qa.OrderManagement.pages.PatientUserPaymentPage;
 import com.qa.OrderManagement.utilities.Utilities;
-
+@Listeners(TestListener.class)
 public class PatientUserOrderTest extends TestBase {
-	//LoginPage loginpage;
-	//PatientUserHomePage puhomepage;
-	//JavascriptExecutor js = (JavascriptExecutor)driver;
+	
 	String fName2upload="C:\\Users\\krish\\OneDrive\\Documents\\Vantashala\\3sep.pdf";
 	 
 
@@ -34,34 +34,22 @@ public class PatientUserOrderTest extends TestBase {
 	@BeforeClass
 	public void setup() {
 		this.driver=initialization();
-		//JavascriptExecutor js = (JavascriptExecutor)driver;
-		//loginpage = new LoginPage();
-		// puhomepage = new PatientUserHomePage();
-	}
+		}
 
 	@Test(priority = 1)
 	public void patientuserOrderCreationTest() throws Throwable {
 		LoginPage loginpage = new LoginPage(driver);
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		
-
-		// System.out.println("from test method");
-		//extentTest = extentReports.createTest("loginPageLogoTest", "View Test Result");
 		loginpage.login(properties.getProperty("patientuser"), properties.getProperty("Password"));
-		Thread.sleep(2000);
-		// puhomepage = new PatientUserHomePage();
-		//Thread.sleep(3000);
+		Thread.sleep(3000);
 		PatientUserHomePage puhomepage = new PatientUserHomePage(driver);
-		//puhomepage.paymentRemainder();
+		Thread.sleep(3000);
+		puhomepage.paymentRemainder();
+		Thread.sleep(3000);
 		//driver.findElement(By.xpath(String.format("//p[normalize-space()='%s']",properties.getProperty("doctorFacility1")))).click();
-		
-		//Thread.sleep(3000);
-		//System.out.print("reminderResult");
-		//extentTest = extentReports.createTest("reminderResult", "View Test Result");
-		Thread.sleep(2000);
 		puhomepage.newdocumentRequest();
+		Thread.sleep(2000);
 		puhomepage.selectDType("DF");
-		//extentTest = extentReports.createTest("newdocumentRequest click", "View Test Result");
 		Thread.sleep(2000);
 		puhomepage.ItemListclick();
 		Thread.sleep(2000);
@@ -143,7 +131,7 @@ public class PatientUserOrderTest extends TestBase {
 	
 	
 	@Test(priority=7,dependsOnMethods= {"clickonsubmitTest"})
-	public void paymentPage() throws InterruptedException 
+	public void ProcesspaymentPage() throws InterruptedException 
 	{
 		PatientUserPaymentPage paymentpage = new PatientUserPaymentPage(driver);
 		paymentpage.enterEmailID("krishnagajula@gmail.com");

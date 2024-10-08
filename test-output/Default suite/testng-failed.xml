@@ -6,14 +6,15 @@
       <class name="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest">
         <methods>
           <include name="selectInternalstatusTest"/>
+          <include name="uploadbutton"/>
           <include name="setup"/>
-          <include name="uploadfiles"/>
-          <include name="clickonfiletab"/>
           <include name="fetchOrderID"/>
+          <include name="clickonfiletab"/>
           <include name="clickonSearchoption"/>
           <include name="DoctorFacilityUserLoginTest"/>
           <include name="clickonOrderID"/>
           <include name="updateOrderDetails"/>
+          <include name="clickonbrowsefiles"/>
           <include name="clickonNewRequestTest"/>
         </methods>
       </class> <!-- com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest -->

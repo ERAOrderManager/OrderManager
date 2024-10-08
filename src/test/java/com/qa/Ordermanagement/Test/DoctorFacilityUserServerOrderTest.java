@@ -1,5 +1,6 @@
 package com.qa.Ordermanagement.Test;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -12,9 +13,7 @@ import com.qa.OrderManagement.base.TestBase;
 @Listeners(TestListener.class)
 
 public class DoctorFacilityUserServerOrderTest extends TestBase {
-	//LoginPage loginpage = new LoginPage(driver);
-	//DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
-	public String OrderID ="VIQ-95";
+	public String OrderID ="VIQ-130";
 	public DoctorFacilityUserServerOrderTest() {
 		super();
 		
@@ -30,14 +29,12 @@ public class DoctorFacilityUserServerOrderTest extends TestBase {
   {
 	  LoginPage loginpage = new LoginPage(driver);
 	  loginpage.login(properties.getProperty("doctorFacilityUser"), properties.getProperty("Password"));
-	  //extentTest = extentReports.createTest("DoctorFacilityUserLoginTest", "Got executed");
 	  Thread.sleep(2000);	  
   }
   
 @Test(priority = 2,dependsOnMethods = {"DoctorFacilityUserLoginTest"})
 public void clickonNewRequestTest() throws InterruptedException
 {
-	  //extentTest = extentReports.createTest("clickonNewRequestTest", "Got executed");
 	  DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	  Dhomepage.clickonnewRequest();
 	  Thread.sleep(3000);
@@ -49,7 +46,7 @@ public void clickonSearchoption()
 {
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	Dhomepage.searchField(OrderID);
-	//extentTest = extentReports.createTest("clickonSearchoption", "Got executed");
+	
 }
 
 @Test(priority = 4,dependsOnMethods = {"clickonSearchoption"})
@@ -57,7 +54,6 @@ public void clickonSearchoption()
  {
 	 DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	 Dhomepage.clickOrderid();
-	 //extentTest = extentReports.createTest("clickonOrderID", "Got executed");
 	 Thread.sleep(3000);
  }
 
@@ -67,7 +63,6 @@ public void fetchOrderID()
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	String rID=Dhomepage.FetchRequestID();
 	System.out.println("RequestID: "+rID);
-	//extentTest = extentReports.createTest("fetchOrderID not Matched", "Got executed");
 	Assert.assertEquals(rID, OrderID);
 
 
@@ -76,33 +71,42 @@ public void fetchOrderID()
 public void selectInternalstatusTest() throws InterruptedException
 {
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
-	//extentTest = extentReports.createTest("selectInternalstatusTest", "Got executed");
 	Dhomepage.selectInternalStatus();
 	Thread.sleep(3000);
 	
 }
 
 @Test(priority = 7,dependsOnMethods = {"selectInternalstatusTest"})
-public void updateOrderDetails()
+public void updateOrderDetails() throws InterruptedException
 {
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	Dhomepage.updateOrderDetailsDetailspage();
+	Thread.sleep(4000);
 }
 
 @Test(priority = 8,dependsOnMethods = {"updateOrderDetails"})
-public void clickonfiletab() 
+public void clickonfiletab() throws InterruptedException 
 
-{
+{   JavascriptExecutor jsf = (JavascriptExecutor)driver;
+	jsf.executeScript("window.scrollBy(0,-600)");
+	Thread.sleep(3000);
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	Dhomepage.clickonFileTab();
 }
 
 @Test(priority = 9,dependsOnMethods = {"clickonfiletab"})
-public void uploadfiles() 
+public void uploadbutton() throws InterruptedException
+{   Thread.sleep(2000);
+	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
+	Dhomepage.clickonuploadbutton();
+}
+@Test(priority = 10,dependsOnMethods = {"uploadbutton"})
+public void clickonbrowsefiles() throws InterruptedException 
 
 {
+	Thread.sleep(2000);
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
-	Dhomepage.uploadfromfiletab();
+	Dhomepage.browsefile();
 }
 
 }

@@ -3,6 +3,7 @@ package com.qa.OrderManagement.pages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -53,6 +54,9 @@ WebElement popupCancelButton;
 @FindBy(xpath="//span[text()='Upload']")
 WebElement upload;
 
+@FindBy(xpath="//div[@class='uppy-Dashboard-AddFiles']")
+WebElement uploadfilewindow;
+
 public void clickonnewRequest()
 {	
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
@@ -98,16 +102,27 @@ public void updateOrderDetailsDetailspage()
 
 public void clickonFileTab()
 {
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Files']")));
-	updateOrderDetails.click();
 	clickFilesTab.click();
 }
-public void uploadfromfiletab()
+
+public void clickonuploadbutton()
 {
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Upload']")));
 	upload.click();
+}
+
+public void browsefile()
+{
+	//uploadfilewindow.click();
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Upload']")));
+	//upload.click();
+	
+	JavascriptExecutor bjs = (JavascriptExecutor)driver;
+	bjs.executeScript("arguments[0].click()", upload);
 }
 
 }

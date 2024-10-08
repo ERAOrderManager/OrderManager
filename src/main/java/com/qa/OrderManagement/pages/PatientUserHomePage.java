@@ -17,8 +17,16 @@ public class PatientUserHomePage extends TestBase
     	PageFactory.initElements(driver, this);
     	
     }
+    ////a[@class='flex items-center h-full w-full' and @href='/documentsRequest']
     
-    @FindBy(xpath="//a[@class='flex items-center h-full w-full' and @href='/documentsRequest']")
+    
+    @FindBy(xpath="//div[@role='dialog']")
+    WebElement paymentDialog;
+    
+    @FindBy(xpath="//button[@type='button' and @tabindex=0]")
+    WebElement ClosePaymentReminderBtn;
+    
+    @FindBy(xpath="//a[@href='/documentsRequest']")
     WebElement newDocumentRequest;
     
     @FindBy(xpath="//p[text()='Doctor Facility']")
@@ -65,6 +73,7 @@ public class PatientUserHomePage extends TestBase
     
     @FindBy(xpath="//button[@type='submit' and text()='Submit Request']")
     WebElement SubmitButton;
+    
     
     //(//input[contains(@class,'upload-input draggable') and @type='file' ])[1]
     //(//input[contains(@class,'upload-input draggable') and @type='file' ])[2]
@@ -117,10 +126,17 @@ public class PatientUserHomePage extends TestBase
 
     
     //Actions
-	/*
-	 * public void paymentRemainder() { PaymentReminderPrmpt.click();
-	 * ClosePaymentReminderBtn.click();
-	 */  
+	
+	  public void paymentRemainder() 
+	  { 
+		  if(paymentDialog.isDisplayed())
+		  {
+		  paymentDialog.click();
+	      ClosePaymentReminderBtn.click();
+	      System.out.println("I am on Dialog");
+		  }else
+		  {System.out.println("No Dialog");}
+	 }
    
     public void newdocumentRequest() 
     {

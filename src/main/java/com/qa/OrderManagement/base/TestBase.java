@@ -62,9 +62,9 @@ public class TestBase {
 	   }
 	   driver.manage().window().maximize();
 	   driver.manage().deleteAllCookies();
+	   driver.get(properties.getProperty("AppURL"));
 	   driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(PAGE_LOAD_TIMEOUT));
 	   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
-	   driver.get(properties.getProperty("AppURL"));
 	   return driver;
    }
 	/*
