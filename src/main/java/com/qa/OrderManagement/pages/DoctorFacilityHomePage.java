@@ -54,7 +54,7 @@ WebElement popupCancelButton;
 @FindBy(xpath="//span[text()='Upload']")
 WebElement upload;
 
-@FindBy(xpath="//div[@class='uppy-Dashboard-AddFiles']")
+@FindBy(xpath="//div[@class='uppy-Dashboard-inner']")
 WebElement uploadfilewindow;
 
 public void clickonnewRequest()
@@ -116,7 +116,7 @@ public void clickonuploadbutton()
 
 public void browsefile()
 {
-	//uploadfilewindow.click();
+	uploadfilewindow.click();
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Upload']")));
 	//upload.click();

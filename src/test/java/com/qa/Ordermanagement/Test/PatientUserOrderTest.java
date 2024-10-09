@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -32,8 +33,9 @@ public class PatientUserOrderTest extends TestBase {
 	}
 
 	@BeforeClass
-	public void setup() {
+	public void setup(ITestContext context) {
 		this.driver=initialization();
+		context.setAttribute("WebDriver", this.driver);
 		}
 
 	@Test(priority = 1)

@@ -1,7 +1,9 @@
 package com.qa.Ordermanagement.Test;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -19,8 +21,9 @@ public class DoctorFacilityUserServerOrderTest extends TestBase {
 		
 	}
   @BeforeClass
-  public void setup() {
+  public void setup(ITestContext context) {
 	 this.driver= initialization();
+	 context.setAttribute("WebDriver", this.driver);
 	  
   }
   
