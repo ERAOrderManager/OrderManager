@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -130,9 +131,17 @@ public class PatientUserOrderTest extends TestBase {
 		puhomepage.ClickonSubmit();
 		Thread.sleep(5000);
 	}
-	
-	
 	@Test(priority=7,dependsOnMethods= {"clickonsubmitTest"})
+	public void captureToastMessage()
+	{
+		PatientUserHomePage puhomepage = new PatientUserHomePage(driver);
+		String Toastmsg=puhomepage.getToastMessage();
+		String checkmsg="success";
+		Assert.assertTrue(Toastmsg.contains(checkmsg));
+	
+	}
+	
+	@Test(priority=8,dependsOnMethods= {"captureToastMessage"})
 	public void ProcesspaymentPage() throws InterruptedException 
 	{
 		PatientUserPaymentPage paymentpage = new PatientUserPaymentPage(driver);

@@ -5,12 +5,13 @@
     <classes>
       <class name="com.qa.Ordermanagement.Test.PatientUserOrderTest">
         <methods>
+          <include name="captureToastMessage"/>
           <include name="patientuserOrderCreationTest"/>
-          <include name="closebrowsers"/>
           <include name="setup"/>
           <include name="uploadHippaDeclaration"/>
-          <include name="uploadpassportbackpageTest"/>
+          <include name="closebrowsers"/>
           <include name="clickonsubmitTest"/>
+          <include name="uploadpassportbackpageTest"/>
           <include name="uploadpassportfrontTest"/>
           <include name="checkTermsandConditions"/>
           <include name="ProcesspaymentPage"/>

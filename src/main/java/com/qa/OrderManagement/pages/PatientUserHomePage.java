@@ -1,11 +1,15 @@
 package com.qa.OrderManagement.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.OrderManagement.base.TestBase;
 
@@ -73,6 +77,9 @@ public class PatientUserHomePage extends TestBase
     
     @FindBy(xpath="//button[@type='submit' and text()='Submit Request']")
     WebElement SubmitButton;
+    
+    @FindBy(xpath="//div[@class='notification-description']")
+    WebElement ToastMessage;
     
     
     //(//input[contains(@class,'upload-input draggable') and @type='file' ])[1]
@@ -207,6 +214,14 @@ public void TermsandConditon()
 public void ClickonSubmit()
 {
 	SubmitButton.click();
+}
+
+public String getToastMessage()
+{
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='notification-description']")));
+	return ToastMessage.getText();
+	
 }
 
 }

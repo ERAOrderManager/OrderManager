@@ -1,48 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="6" failed="1" skipped="0">
+<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-09T11:04:59 IST" name="Default suite" finished-at="2024-10-09T11:06:42 IST" duration-ms="103529">
+  <suite started-at="2024-10-09T16:52:07 IST" name="Default suite" finished-at="2024-10-09T16:53:53 IST" duration-ms="106396">
     <groups>
     </groups>
-    <test started-at="2024-10-09T11:04:59 IST" name="Default test" finished-at="2024-10-09T11:06:42 IST" duration-ms="103529">
+    <test started-at="2024-10-09T16:52:07 IST" name="Default test" finished-at="2024-10-09T16:53:53 IST" duration-ms="106396">
       <class name="com.qa.Ordermanagement.Test.PatientUserOrderTest">
-        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@456d6c1e]" started-at="2024-10-09T11:04:59 IST" name="setup" finished-at="2024-10-09T11:05:02 IST" duration-ms="3341" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@452e19ca]" started-at="2024-10-09T16:52:07 IST" name="setup" finished-at="2024-10-09T16:52:12 IST" duration-ms="5241" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@41fa769c]]>
+                <![CDATA[org.testng.TestRunner@46fc522d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="patientuserOrderCreationTest()[pri:1, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@456d6c1e]" started-at="2024-10-09T11:05:02 IST" name="patientuserOrderCreationTest" finished-at="2024-10-09T11:05:26 IST" duration-ms="24326" status="PASS">
+        <test-method signature="patientuserOrderCreationTest()[pri:1, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@452e19ca]" started-at="2024-10-09T16:52:12 IST" name="patientuserOrderCreationTest" finished-at="2024-10-09T16:52:38 IST" duration-ms="25273" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- patientuserOrderCreationTest -->
-        <test-method signature="uploadpassportfrontTest()[pri:2, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@456d6c1e]" started-at="2024-10-09T11:05:26 IST" name="uploadpassportfrontTest" finished-at="2024-10-09T11:05:44 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.patientuserOrderCreationTest" duration-ms="17433" status="PASS">
+        <test-method signature="uploadpassportfrontTest()[pri:2, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@452e19ca]" started-at="2024-10-09T16:52:38 IST" name="uploadpassportfrontTest" finished-at="2024-10-09T16:52:55 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.patientuserOrderCreationTest" duration-ms="17416" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- uploadpassportfrontTest -->
-        <test-method signature="uploadpassportbackpageTest()[pri:3, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@456d6c1e]" started-at="2024-10-09T11:05:44 IST" name="uploadpassportbackpageTest" finished-at="2024-10-09T11:06:03 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadpassportfrontTest" duration-ms="19383" status="PASS">
+        <test-method signature="uploadpassportbackpageTest()[pri:3, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@452e19ca]" started-at="2024-10-09T16:52:55 IST" name="uploadpassportbackpageTest" finished-at="2024-10-09T16:53:14 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadpassportfrontTest" duration-ms="19382" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- uploadpassportbackpageTest -->
-        <test-method signature="uploadHippaDeclaration()[pri:4, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@456d6c1e]" started-at="2024-10-09T11:06:03 IST" name="uploadHippaDeclaration" finished-at="2024-10-09T11:06:27 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadpassportbackpageTest" duration-ms="23397" status="PASS">
+        <test-method signature="uploadHippaDeclaration()[pri:4, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@452e19ca]" started-at="2024-10-09T16:53:14 IST" name="uploadHippaDeclaration" finished-at="2024-10-09T16:53:38 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadpassportbackpageTest" duration-ms="23406" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- uploadHippaDeclaration -->
-        <test-method signature="checkTermsandConditions()[pri:5, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@456d6c1e]" started-at="2024-10-09T11:06:27 IST" name="checkTermsandConditions" finished-at="2024-10-09T11:06:27 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadHippaDeclaration" duration-ms="70" status="PASS">
+        <test-method signature="checkTermsandConditions()[pri:5, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@452e19ca]" started-at="2024-10-09T16:53:38 IST" name="checkTermsandConditions" finished-at="2024-10-09T16:53:38 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadHippaDeclaration" duration-ms="73" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkTermsandConditions -->
-        <test-method signature="clickonsubmitTest()[pri:6, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@456d6c1e]" started-at="2024-10-09T11:06:27 IST" name="clickonsubmitTest" finished-at="2024-10-09T11:06:32 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.checkTermsandConditions" duration-ms="5109" status="PASS">
+        <test-method signature="clickonsubmitTest()[pri:6, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@452e19ca]" started-at="2024-10-09T16:53:38 IST" name="clickonsubmitTest" finished-at="2024-10-09T16:53:43 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.checkTermsandConditions" duration-ms="5102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickonsubmitTest -->
-        <test-method signature="ProcesspaymentPage()[pri:7, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@456d6c1e]" started-at="2024-10-09T11:06:32 IST" name="ProcesspaymentPage" finished-at="2024-10-09T11:06:42 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.clickonsubmitTest" duration-ms="10061" status="FAIL">
+        <test-method signature="captureToastMessage()[pri:7, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@452e19ca]" started-at="2024-10-09T16:53:43 IST" name="captureToastMessage" finished-at="2024-10-09T16:53:43 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.clickonsubmitTest" duration-ms="52" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureToastMessage -->
+        <test-method signature="ProcesspaymentPage()[pri:8, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@452e19ca]" started-at="2024-10-09T16:53:43 IST" name="ProcesspaymentPage" finished-at="2024-10-09T16:53:53 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.captureToastMessage" duration-ms="10031" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//iframe[@title='Secure email input frame']"}
@@ -51,9 +55,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.19.1', revision: 'abe0ee07dc'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a3d0c3397059ca8d6142242c982a70ec, findElement {using=xpath, value=//iframe[@title='Secure email input frame']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\krish\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59050}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59050/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a3d0c3397059ca8d6142242c982a70ec]]>
+Command: [633129923de788b117a9e25bc1bbbbb3, findElement {using=xpath, value=//iframe[@title='Secure email input frame']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.91 (b00bc8b76d60..., userDataDir: C:\Users\krish\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61665}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61665/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 633129923de788b117a9e25bc1bbbbb3]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//iframe[@title='Secure email input frame']"}
@@ -62,9 +66,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.19.1', revision: 'abe0ee07dc'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a3d0c3397059ca8d6142242c982a70ec, findElement {using=xpath, value=//iframe[@title='Secure email input frame']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\krish\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59050}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59050/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a3d0c3397059ca8d6142242c982a70ec
+Command: [633129923de788b117a9e25bc1bbbbb3, findElement {using=xpath, value=//iframe[@title='Secure email input frame']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.91 (b00bc8b76d60..., userDataDir: C:\Users\krish\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61665}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61665/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 633129923de788b117a9e25bc1bbbbb3
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -87,7 +91,7 @@ at jdk.proxy2/jdk.proxy2.$Proxy15.getWrappedElement(Unknown Source)
 at org.openqa.selenium.remote.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:48)
 at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:1104)
 at com.qa.OrderManagement.pages.PatientUserPaymentPage.enterEmailID(PatientUserPaymentPage.java:70)
-at com.qa.Ordermanagement.Test.PatientUserOrderTest.ProcesspaymentPage(PatientUserOrderTest.java:139)
+at com.qa.Ordermanagement.Test.PatientUserOrderTest.ProcesspaymentPage(PatientUserOrderTest.java:148)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -122,7 +126,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProcesspaymentPage -->
-        <test-method is-config="true" signature="closebrowsers()[pri:0, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@456d6c1e]" started-at="2024-10-09T11:06:42 IST" name="closebrowsers" finished-at="2024-10-09T11:06:42 IST" duration-ms="245" status="PASS">
+        <test-method is-config="true" signature="closebrowsers()[pri:0, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@452e19ca]" started-at="2024-10-09T16:53:53 IST" name="closebrowsers" finished-at="2024-10-09T16:53:53 IST" duration-ms="247" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closebrowsers -->
