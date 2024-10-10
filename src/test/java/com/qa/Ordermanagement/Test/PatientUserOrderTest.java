@@ -12,16 +12,14 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.qa.OrderManagement.Reports.TestListener;
 import com.qa.OrderManagement.base.TestBase;
 import com.qa.OrderManagement.pages.LoginPage;
 import com.qa.OrderManagement.pages.PatientUserHomePage;
 import com.qa.OrderManagement.pages.PatientUserPaymentPage;
-import com.qa.OrderManagement.utilities.Utilities;
+import com.qa.OrderManagement.utilities.UtilitiesforOMS;
 @Listeners(TestListener.class)
 public class PatientUserOrderTest extends TestBase {
 	
@@ -107,7 +105,7 @@ public class PatientUserOrderTest extends TestBase {
 	{
 		PatientUserHomePage puhomepage = new PatientUserHomePage(driver);
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,400)");
+		js.executeScript("window.scrollBy(0,700)");
 		Thread.sleep(4000);
      	driver.findElement(By.xpath("(//div[@class='text-center p-2 relative'])[3]")).click();
      	Thread.sleep(2000);
@@ -142,6 +140,21 @@ public class PatientUserOrderTest extends TestBase {
 	}
 	
 	@Test(priority=8,dependsOnMethods= {"captureToastMessage"})
+	public void writetofileOrderId()
+	{
+		UtilitiesforOMS uoms = new UtilitiesforOMS();
+		PatientUserHomePage puhomepage = new PatientUserHomePage(driver);
+		
+		//captureOrderID 
+		String OrderID=puhomepage.fetchOrderID();
+		//and write to text file
+		if(OrderID!=null) {
+		uoms.writetotextfile(OrderID);
+		}else
+		{System.out.println("order ID was empty");
+		}
+	}
+	@Test(priority=9,dependsOnMethods= {"writetofileOrderId"})
 	public void ProcesspaymentPage() throws InterruptedException 
 	{
 		PatientUserPaymentPage paymentpage = new PatientUserPaymentPage(driver);
@@ -163,9 +176,7 @@ public class PatientUserOrderTest extends TestBase {
 		
 	}
 	
-	
-	
-	
+		
 	public void fileupload(String fname) throws AWTException
 	{
 		JavascriptExecutor jsf = (JavascriptExecutor)driver;
@@ -190,8 +201,8 @@ public class PatientUserOrderTest extends TestBase {
 		r.setAutoDelay(1000);
 		jsf.executeScript("window.scrollBy(0,-100)");
 		
-		driver.manage().window().minimize();
-		driver.manage().window().maximize();
+		//driver.manage().window().minimize();
+		//driver.manage().window().maximize();
 		
 	}
 	 @AfterClass 

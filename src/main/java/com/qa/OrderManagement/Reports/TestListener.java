@@ -99,7 +99,7 @@ public class TestListener implements ITestListener{
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
         String screenshotName="ScreenDiscrp";
-		String destination = System.getProperty("user.dir") + "/Screenshots/" + screenshotName + dateName + ".jpg";
+		String destination = System.getProperty("user.dir") + "/Screenshots/" + screenshotName + dateName + ".png";
         File finalDestination = new File(destination);
         try {
         	ReportTestManager.getTest().log(Status.FAIL, iTestResult.getThrowable());

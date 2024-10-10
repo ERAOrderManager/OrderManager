@@ -14,10 +14,11 @@ import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.qa.OrderManagement.Reports.TestListener;
-import com.qa.OrderManagement.utilities.Utilities;
+import com.qa.OrderManagement.utilities.UtilitiesforOMS;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import com.aventstack.extentreports.MediaEntityBuilder;
+
 @Listeners(TestListener.class)
 public class TestBase {
    public WebDriver driver;

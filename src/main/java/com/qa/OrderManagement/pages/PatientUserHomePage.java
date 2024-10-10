@@ -81,6 +81,9 @@ public class PatientUserHomePage extends TestBase
     @FindBy(xpath="//div[@class='notification-description']")
     WebElement ToastMessage;
     
+    @FindBy(xpath="(//div/strong)[1]")
+    WebElement RawOrderIDmessage;
+    
     
     //(//input[contains(@class,'upload-input draggable') and @type='file' ])[1]
     //(//input[contains(@class,'upload-input draggable') and @type='file' ])[2]
@@ -223,6 +226,31 @@ public String getToastMessage()
 	return ToastMessage.getText();
 	
 }
+//Read from page,fetch OrderID
+public String fetchOrderID()
+{
+	
+	//driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/main/div/strong")).getText();
+		//New code
+	  
+	  String Ordernumber;
+	  String fnlOrdernumber = null;
+	try {
+		String ordernumber = RawOrderIDmessage.getText();
+		  String[] valSplit = ordernumber.split(":"); 
+		  String rawval=valSplit[1].trim();
+		  String[] fnlsplit = rawval.split("    "); 
+		  fnlOrdernumber = fnlsplit[0].trim();
+		  System.out.println("Order number "+ordernumber +"splited "+fnlOrdernumber);
+		
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return fnlOrdernumber;
+	 	
+	//String Ordernumber ="VIQ-149";
+}
+	
 
 }
-

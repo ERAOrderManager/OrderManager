@@ -4,26 +4,30 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Listeners;
+
+import com.qa.OrderManagement.Reports.TestListener;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
 import org.apache.commons.io.FileUtils;
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.io.BufferedWriter;
 
-public class Utilities
+@Listeners(TestListener.class)
+
+public class UtilitiesforOMS
 {
-	WebDriver driver =WebDriverManager.chromedriver().create();
-	JavascriptExecutor js = (JavascriptExecutor)driver;
-    public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException {
+	   
+	public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException {
         String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
@@ -54,10 +58,33 @@ public class Utilities
 		r.keyRelease(KeyEvent.VK_ENTER);
 		
 		r.setAutoDelay(2000);
-		js.executeScript("window.scrollBy(0,100)");
+		//js.executeScript("window.scrollBy(0,100)");
 		
 		//driver.manage().window().minimize();
 		//driver.manage().window().maximize();
 		
 	}
+    
+    public void writetotextfile(String oID)
+    {
+           // Write the title to a text file
+    	String OrderID =oID;
+		/*
+		 * String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+		 * //String destination = System.getProperty("user.dir") + "/Screenshots/" +
+		 * screenshotName + dateName + ".png" String destination =
+		 * System.getProperty("user.dir") + "/TextFile/" + OrderID +"-" + dateName +
+		 * ".txt"; System.out.println("destination "+destination); File finalDestination
+		 * = new File(destination);
+		 * System.out.println("finalDestination "+finalDestination);
+		 */
+    	//"file"+OrderID+".txt"
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("file-"+ OrderID +".txt")))
+        {
+            writer.write(OrderID);
+            System.out.println("Successfully written to the file.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
