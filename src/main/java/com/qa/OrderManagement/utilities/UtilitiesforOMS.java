@@ -16,11 +16,15 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.io.BufferedWriter;
+import java.io.BufferedReader;
+import java.util.List;
+import java.util.ArrayList;
 
 @Listeners(TestListener.class)
 
@@ -86,5 +90,25 @@ public class UtilitiesforOMS
         } catch (IOException e) {
             e.printStackTrace();
         }
+     
+    }
+    
+    
+    public  List<String> readfromtextfile()
+    {
+    	List<String> content = new ArrayList<>();
+    	try (BufferedReader reader = new BufferedReader(new FileReader("file-VIQ-149.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+            	
+            	content.add(line);
+                   System.out.println("RorderID : " + line);
+                // Perform additional Selenium actions here
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    	
+      return content;
     }
 }

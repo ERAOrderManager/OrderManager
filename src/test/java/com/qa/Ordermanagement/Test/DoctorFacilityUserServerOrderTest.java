@@ -1,7 +1,8 @@
 package com.qa.Ordermanagement.Test;
 
+import java.util.List;
+
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
@@ -11,11 +12,13 @@ import com.qa.OrderManagement.pages.LoginPage;
 import com.qa.OrderManagement.pages.DoctorFacilityHomePage;
 import com.qa.OrderManagement.Reports.TestListener;
 import com.qa.OrderManagement.base.TestBase;
+import com.qa.OrderManagement.utilities.UtilitiesforOMS;
+
 
 @Listeners(TestListener.class)
 
 public class DoctorFacilityUserServerOrderTest extends TestBase {
-	public String OrderID ="VIQ-130";
+	public List<String> OrderID ;
 	public DoctorFacilityUserServerOrderTest() {
 		super();
 		
@@ -26,6 +29,8 @@ public class DoctorFacilityUserServerOrderTest extends TestBase {
 	 context.setAttribute("WebDriver", this.driver);
 	  
   }
+  
+ 
   
   @Test(priority=1)
   public void DoctorFacilityUserLoginTest() throws InterruptedException
@@ -44,15 +49,22 @@ public void clickonNewRequestTest() throws InterruptedException
 	  
 }
 @Test(priority = 3,dependsOnMethods = {"clickonNewRequestTest"})
+public void fetchorderidfromfile()
+{
+	  UtilitiesforOMS uOMS = new UtilitiesforOMS();
+	  OrderID=uOMS.readfromtextfile();
+	  System.out.println("Fetched Order ID: "+OrderID +OrderID.size());
+	  
+}
+@Test(priority = 4,dependsOnMethods = {"fetchorderidfromfile"})
 public void clickonSearchoption()
 
-{
+{   String sOrderID="VIQ-149";
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
-	Dhomepage.searchField(OrderID);
-	
+	Dhomepage.searchField(sOrderID);	
 }
 
-@Test(priority = 4,dependsOnMethods = {"clickonSearchoption"})
+@Test(priority = 5,dependsOnMethods = {"clickonSearchoption"})
  public void clickonOrderID() throws InterruptedException
  {
 	 DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
@@ -60,7 +72,7 @@ public void clickonSearchoption()
 	 Thread.sleep(3000);
  }
 
-@Test(priority = 5,dependsOnMethods = {"clickonOrderID"})
+@Test(priority = 6,dependsOnMethods = {"clickonOrderID"})
 public void fetchOrderID()
 {
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
@@ -70,7 +82,7 @@ public void fetchOrderID()
 
 
 }
-@Test(priority = 6,dependsOnMethods = {"fetchOrderID"})
+@Test(priority = 7,dependsOnMethods = {"fetchOrderID"})
 public void selectInternalstatusTest() throws InterruptedException
 {
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
@@ -79,7 +91,7 @@ public void selectInternalstatusTest() throws InterruptedException
 	
 }
 
-@Test(priority = 7,dependsOnMethods = {"selectInternalstatusTest"})
+@Test(priority = 8,dependsOnMethods = {"selectInternalstatusTest"})
 public void updateOrderDetails() throws InterruptedException
 {
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
@@ -87,7 +99,7 @@ public void updateOrderDetails() throws InterruptedException
 	Thread.sleep(4000);
 }
 
-@Test(priority = 8,dependsOnMethods = {"updateOrderDetails"})
+@Test(priority = 9,dependsOnMethods = {"updateOrderDetails"})
 public void clickonfiletab() throws InterruptedException 
 
 {   JavascriptExecutor jsf = (JavascriptExecutor)driver;
@@ -97,13 +109,13 @@ public void clickonfiletab() throws InterruptedException
 	Dhomepage.clickonFileTab();
 }
 
-@Test(priority = 9,dependsOnMethods = {"clickonfiletab"})
+@Test(priority = 10,dependsOnMethods = {"clickonfiletab"})
 public void uploadbutton() throws InterruptedException
 {   Thread.sleep(2000);
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	Dhomepage.clickonuploadbutton();
 }
-@Test(priority = 10,dependsOnMethods = {"uploadbutton"})
+@Test(priority = 11,dependsOnMethods = {"uploadbutton"})
 public void clickonbrowsefiles() throws InterruptedException 
 
 {
