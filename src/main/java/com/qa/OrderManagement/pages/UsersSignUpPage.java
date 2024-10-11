@@ -37,7 +37,7 @@ WebElement InsuranceCompany;
 
 //Actions
 
-void clickonPatientUserSignup()
+public void clickonPatientUserSignup()
 {
 	PatientUser.click();
 }

@@ -46,6 +46,10 @@ public class PatientNewRegistrationPage extends TestBase{
 	@FindBy(xpath="//button[contains(text(),'Next') and @type='submit']")
 	WebElement NextButton;
 	
-
+//Actions
+	public void enterPatientUserDetail()
+	{
+		MFirstName.sendKeys("KRISHNA");
+	}
 	
 }

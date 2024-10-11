@@ -3,21 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.Ordermanagement.Test.PatientUserOrderTest">
+      <class name="com.qa.Ordermanagement.Test.PatientNewRegistrationTest">
         <methods>
-          <include name="captureToastMessage"/>
-          <include name="patientuserOrderCreationTest"/>
           <include name="setup"/>
-          <include name="closebrowsers"/>
-          <include name="uploadHippaDeclaration"/>
-          <include name="uploadpassportbackpageTest"/>
-          <include name="clickonsubmitTest"/>
-          <include name="uploadpassportfrontTest"/>
-          <include name="checkTermsandConditions"/>
-          <include name="writetofileOrderId"/>
-          <include name="ProcesspaymentPage"/>
+          <include name="patientuserSignup"/>
+          <include name="PersonalInformation"/>
+          <include name="clickonUserSignup"/>
         </methods>
-      </class> <!-- com.qa.Ordermanagement.Test.PatientUserOrderTest -->
+      </class> <!-- com.qa.Ordermanagement.Test.PatientNewRegistrationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

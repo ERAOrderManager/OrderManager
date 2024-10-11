@@ -56,4 +56,9 @@ public class LoginPage extends TestBase {
 		SignIn.click();
 		//return new PatientUserHomePage();
 	}
+	
+	public void signup()
+	{
+		SignUp.click();
+	}
 }
