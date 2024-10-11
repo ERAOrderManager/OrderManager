@@ -53,7 +53,10 @@ public void fetchorderidfromfile()
 {
 	  UtilitiesforOMS uOMS = new UtilitiesforOMS();
 	  OrderID=uOMS.readfromtextfile();
-	  System.out.println("Fetched Order ID: "+OrderID +OrderID.size());
+	  for(String order :OrderID)
+	  {
+	  System.out.println("Fetched Order ID: "+order +OrderID.size());
+	  }
 	  
 }
 @Test(priority = 4,dependsOnMethods = {"fetchorderidfromfile"})

@@ -15,7 +15,6 @@ public class LoginPage extends TestBase {
 	
 	public LoginPage(WebDriver driver) 
 	{
-		
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -34,6 +33,9 @@ public class LoginPage extends TestBase {
 	
 	@FindBy(xpath="//img[contains(@class,'w-40 h-7')]")
 	WebElement Logo;
+	
+	@FindBy(xpath="")
+	WebElement SignUp;
 	
 	//WebElement Username=driver.findElement(By.xpath("//input[@name='userName']"));
 	//WebElement Password=driver.findElement(By.xpath("//input[@name='password']"));
