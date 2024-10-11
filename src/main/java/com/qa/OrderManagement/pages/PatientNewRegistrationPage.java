@@ -47,9 +47,9 @@ public class PatientNewRegistrationPage extends TestBase{
 	WebElement NextButton;
 	
 //Actions
-	public void enterPatientUserDetail()
+	public void enterPatientUserDetail(String details)
 	{
-		MFirstName.sendKeys("KRISHNA");
+		MFirstName.sendKeys(details);
 	}
 	
 }

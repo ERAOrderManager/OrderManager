@@ -24,16 +24,16 @@ public class PatientNewRegistrationTest extends TestBase {
 		context.setAttribute("WebDriver", this.driver);
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1 )
 	public void clickonUserSignup() throws InterruptedException
 	{
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.signup();
+		loginpage.newUserSignup();
 		Thread.sleep(3000);
 	}
 		
 	
-	@Test(priority=2)
+	@Test(priority=2,dependsOnMethods= {"clickonUserSignup"})
 	public void patientuserSignup() throws InterruptedException
 	{
 		UsersSignUpPage Usup = new UsersSignUpPage(driver);
@@ -42,10 +42,10 @@ public class PatientNewRegistrationTest extends TestBase {
 	}
 	
 
-	@Test(priority=3)
+	@Test(priority=3,dependsOnMethods= {"patientuserSignup"})
 	public void PersonalInformation()
 	{
 		PatientNewRegistrationPage Pnrp = new PatientNewRegistrationPage(driver);
-		Pnrp.enterPatientUserDetail();
+		Pnrp.enterPatientUserDetail("KRISHNA");
 	}
 }

@@ -25,6 +25,10 @@ import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.FileInputStream;
+
 
 @Listeners(TestListener.class)
 
@@ -111,4 +115,28 @@ public class UtilitiesforOMS
     	
       return content;
     }
+    
+         public static List<String[]> getData(String filePath) {
+            List<String[]> data = new ArrayList<>();
+            try (FileInputStream fis = new FileInputStream(new File(filePath));
+                 Workbook workbook = new XSSFWorkbook(fis)) {
+                Sheet sheet = workbook.getSheetAt(0);
+                for (Row row : sheet) {
+                    String[] rowData = new String[row.getLastCellNum()];
+                    for (int i = 0; i < row.getLastCellNum(); i++) {
+                        rowData[i] = row.getCell(i).getStringCellValue();
+                    }
+                    data.add(rowData);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return data;
+        }
+    
+   
+    
+    
 }
+
+

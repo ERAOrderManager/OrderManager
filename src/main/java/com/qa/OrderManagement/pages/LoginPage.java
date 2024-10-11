@@ -34,7 +34,7 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath="//img[contains(@class,'w-40 h-7')]")
 	WebElement Logo;
 	
-	@FindBy(xpath="")
+	@FindBy(xpath="//a[contains(text(),'Sign Up') and @href='/sign-up']")
 	WebElement SignUp;
 	
 	//WebElement Username=driver.findElement(By.xpath("//input[@name='userName']"));
@@ -57,7 +57,7 @@ public class LoginPage extends TestBase {
 		//return new PatientUserHomePage();
 	}
 	
-	public void signup()
+	public void newUserSignup()
 	{
 		SignUp.click();
 	}
