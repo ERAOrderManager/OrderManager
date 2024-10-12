@@ -43,9 +43,29 @@ public class PatientNewRegistrationTest extends TestBase {
 	
 
 	@Test(priority=3,dependsOnMethods= {"patientuserSignup"})
-	public void PersonalInformation()
+	public void PersonalInformation() throws InterruptedException
 	{
 		PatientNewRegistrationPage Pnrp = new PatientNewRegistrationPage(driver);
-		Pnrp.enterPatientUserDetail("KRISHNA");
+		//Personal Info Tab
+		Pnrp.MFirstName.sendKeys("Krishna");
+		Pnrp.MMiddleName.sendKeys("Prasad");
+		Pnrp.MLastName.sendKeys("Gajula");
+		Pnrp.Memail.sendKeys("test@testmail.com");
+		Pnrp.MphoneNumber.sendKeys("470-981-9474");
+		Pnrp.Olast4SSN.sendKeys("4321");
+		Pnrp.Mpassword.sendKeys("Test@123");
+		Pnrp.MconfirmPassword.sendKeys("Test@123");
+		Pnrp.MacceptTermsCheckBox.click();
+		Pnrp.NextButton.click();
+		//Address Tab
+		Thread.sleep(3000);
+		Pnrp.AddressLine1.sendKeys("AddressLine1");
+		Pnrp.AddressLine2.sendKeys("AddressLine2");
+		Pnrp.City.sendKeys("Atlanta");
+		Pnrp.ListState.click();
+		Pnrp.EnterState.sendKeys("Georgia");
+		Pnrp.Zipcode.sendKeys("30004");
+		Pnrp.Submit.click();
+		
 	}
 }

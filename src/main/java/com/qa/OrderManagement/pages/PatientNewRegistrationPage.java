@@ -16,35 +16,56 @@ public class PatientNewRegistrationPage extends TestBase{
 	
 	}
 
-	@FindBy(name="firstName")
+	public @FindBy(name="firstName")
 	WebElement MFirstName;
 	
-	@FindBy(name="middleName")
+	public @FindBy(name="middleName")
 	WebElement MMiddleName;
 	
-	@FindBy(name="lastName")
+	public @FindBy(name="lastName")
 	WebElement MLastName;
 	
-	@FindBy(name="email")
+	public @FindBy(name="email")
 	WebElement Memail;
 	
-	@FindBy(name="phoneNumber")
+	public @FindBy(name="phoneNumber")
 	WebElement MphoneNumber;
 	
-	@FindBy(name="last4SSN")
+	public @FindBy(name="last4SSN")
 	WebElement Olast4SSN;
 	
-	@FindBy(name="password")
+	public @FindBy(name="password")
 	WebElement Mpassword;
 	
-	@FindBy(name="confirmPassword")
+	public @FindBy(name="confirmPassword")
 	WebElement MconfirmPassword;
 	
-	@FindBy(name="acceptTerms")
+	public @FindBy(name="acceptTerms")
 	WebElement MacceptTermsCheckBox;
 	
-	@FindBy(xpath="//button[contains(text(),'Next') and @type='submit']")
+	public @FindBy(xpath="//button[contains(text(),'Next') and @type='submit']")
 	WebElement NextButton;
+	
+	public @FindBy(xpath="//input[@name='addressLine1']")
+	WebElement AddressLine1;
+	
+	public @FindBy(xpath="//input[@name='addressLine2']")
+	WebElement AddressLine2;
+	
+	public @FindBy(xpath="//input[@name='city']")
+	WebElement City;
+	
+	public @FindBy(xpath="//div[@class='select-dropdown-indicator']")
+	WebElement ListState;
+	
+	public @FindBy(xpath="//input[@name='state']")
+	WebElement EnterState;
+	
+	public @FindBy(xpath="//input[@name='zipcode']")
+	WebElement Zipcode;
+	
+	public @FindBy(xpath="//button[@type='submit']")
+	WebElement Submit;
 	
 //Actions
 	public void enterPatientUserDetail(String details)
