@@ -7,8 +7,8 @@
         <methods>
           <include name="patientuserSignup"/>
           <include name="setup"/>
-          <include name="clickonUserSignup"/>
           <include name="PersonalInformation"/>
+          <include name="clickonUserSignup"/>
         </methods>
       </class> <!-- com.qa.Ordermanagement.Test.PatientNewRegistrationTest -->
     </classes>

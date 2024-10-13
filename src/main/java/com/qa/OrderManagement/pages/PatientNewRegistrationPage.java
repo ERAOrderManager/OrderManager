@@ -28,6 +28,9 @@ public class PatientNewRegistrationPage extends TestBase{
 	public @FindBy(name="email")
 	WebElement Memail;
 	
+	public @FindBy(xpath="//input[@type='text' and @class='input h-11' ]")
+	WebElement MDOB;
+	
 	public @FindBy(name="phoneNumber")
 	WebElement MphoneNumber;
 	
@@ -58,7 +61,7 @@ public class PatientNewRegistrationPage extends TestBase{
 	public @FindBy(xpath="//div[@class='select-dropdown-indicator']")
 	WebElement ListState;
 	
-	public @FindBy(xpath="//input[@name='state']")
+	public @FindBy(xpath="//div[@id='react-select-5-placeholder']")
 	WebElement EnterState;
 	
 	public @FindBy(xpath="//input[@name='zipcode']")
