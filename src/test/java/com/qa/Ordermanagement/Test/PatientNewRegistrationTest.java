@@ -72,32 +72,47 @@ public class PatientNewRegistrationTest extends TestBase {
             System.out.println("Data10 :"+data[9]);
             System.out.println("Data11 :"+data[10]);
             
+            Pnrp.MFirstName.sendKeys(data[1]);
+    		Pnrp.MMiddleName.sendKeys(data[2]);
+    		Pnrp.MLastName.sendKeys(data[3]);
+    		Pnrp.Memail.sendKeys(data[4]);
+    		Pnrp.MDOB.sendKeys(data[5]);
+    		Pnrp.MphoneNumber.sendKeys(data[6]);
+    		Pnrp.Olast4SSN.sendKeys(data[7]);
+    		Pnrp.Mpassword.sendKeys(data[8]);
+    		Pnrp.MconfirmPassword.sendKeys(data[9]);
+    		Pnrp.MacceptTermsCheckBox.click();
+    		Pnrp.NextButton.click();
+    		//Address Tab
+    		Thread.sleep(3000);
+    		Pnrp.AddressLine1.sendKeys(data[10]);
+    		Pnrp.AddressLine2.sendKeys(data[11]);
+    		Pnrp.City.sendKeys(data[12]);
+    		Pnrp.ListState.click();
+    		Thread.sleep(2000);
+    		//Pnrp.EnterState.sendKeys("Georgia");
+    		driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']",data[13]))).click();
+    		Pnrp.Zipcode.sendKeys(data[14]);
+    		Pnrp.Submit.click();
+            
 
             // Add assertions or further test steps here
         }
 		//Personal Info Tab
-		Pnrp.MFirstName.sendKeys("Krishna");
-		Pnrp.MMiddleName.sendKeys("Prasad");
-		Pnrp.MLastName.sendKeys("Gajula");
-		Pnrp.Memail.sendKeys("test@testmail.com");
-		Pnrp.MDOB.sendKeys("12/12/1982");
-		Pnrp.MphoneNumber.sendKeys("470-981-9474");
-		Pnrp.Olast4SSN.sendKeys("4321");
-		Pnrp.Mpassword.sendKeys("Test@123");
-		Pnrp.MconfirmPassword.sendKeys("Test@123");
-		Pnrp.MacceptTermsCheckBox.click();
-		Pnrp.NextButton.click();
-		//Address Tab
-		Thread.sleep(3000);
-		Pnrp.AddressLine1.sendKeys("AddressLine1");
-		Pnrp.AddressLine2.sendKeys("AddressLine2");
-		Pnrp.City.sendKeys("Atlanta");
-		Pnrp.ListState.click();
-		Thread.sleep(2000);
-		//Pnrp.EnterState.sendKeys("Georgia");
-		driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']","Georgia"))).click();
-		Pnrp.Zipcode.sendKeys("30004");
-		Pnrp.Submit.click();
+		/*
+		 * Pnrp.MFirstName.sendKeys(data[1]); Pnrp.MMiddleName.sendKeys("Prasad");
+		 * Pnrp.MLastName.sendKeys("Gajula"); Pnrp.Memail.sendKeys("test@testmail.com");
+		 * Pnrp.MDOB.sendKeys("12/12/1982"); Pnrp.MphoneNumber.sendKeys("470-981-9474");
+		 * Pnrp.Olast4SSN.sendKeys("4321"); Pnrp.Mpassword.sendKeys("Test@123");
+		 * Pnrp.MconfirmPassword.sendKeys("Test@123");
+		 * Pnrp.MacceptTermsCheckBox.click(); Pnrp.NextButton.click(); //Address Tab
+		 * Thread.sleep(3000); Pnrp.AddressLine1.sendKeys("AddressLine1");
+		 * Pnrp.AddressLine2.sendKeys("AddressLine2"); Pnrp.City.sendKeys("Atlanta");
+		 * Pnrp.ListState.click(); Thread.sleep(2000);
+		 * //Pnrp.EnterState.sendKeys("Georgia");
+		 * driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']",
+		 * "Georgia"))).click(); Pnrp.Zipcode.sendKeys("30004"); Pnrp.Submit.click()
+		 */;
 		
 	}
 }
