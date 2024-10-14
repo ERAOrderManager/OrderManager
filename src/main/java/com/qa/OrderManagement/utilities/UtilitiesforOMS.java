@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.ss.formula.functions.Rows;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
@@ -119,15 +120,19 @@ public class UtilitiesforOMS
     }
     
          public  List<String[]> getData(String filePath,String sheetName) {
+        	DataFormatter formatter = new DataFormatter();
+        	 
             List<String[]> data = new ArrayList<>();
             try (FileInputStream fis = new FileInputStream(new File(filePath));
                  Workbook workbook = new XSSFWorkbook(fis)) {
                 Sheet sheet = workbook.getSheet(sheetName);
-                Row row=sheet.getRow(1);
-                for (Row row2 : sheet) {
-                    String[] rowData = new String[row2.getLastCellNum()];
-                    for (int i = 0; i < row2.getLastCellNum(); i++) {
-                        rowData[i] = row2.getCell(i).getStringCellValue();
+                int totalrows = sheet.getPhysicalNumberOfRows();
+                for (int k=1;k< totalrows;k++) {
+                	Row row = sheet.getRow(k);
+                    String[] rowData = new String[row.getLastCellNum()];
+                    for (int i = 0; i < row.getLastCellNum(); i++) {
+                        rowData[i] = formatter.formatCellValue(row.getCell(i));
+                        
                     }
                     data.add(rowData);
                 }

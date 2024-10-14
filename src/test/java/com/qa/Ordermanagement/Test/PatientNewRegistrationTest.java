@@ -59,6 +59,7 @@ public class PatientNewRegistrationTest extends TestBase {
 			 * driver.findElement(By.id("password")).sendKeys(data[1]);
 			 * driver.findElement(By.id("loginButton")).click();
 			 */
+			
             System.out.println("Data1 :"+data[0]);
             System.out.println("Data2 :"+data[1]);
             System.out.println("Data3 :"+data[2]);
