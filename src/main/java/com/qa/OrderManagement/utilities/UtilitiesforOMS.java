@@ -101,10 +101,10 @@ public class UtilitiesforOMS
     }
     
     
-    public  List<String> readfromtextfile()
+    public  List<String> readfromtextfile(String fileName)
     {
     	List<String> content = new ArrayList<>();
-    	try (BufferedReader reader = new BufferedReader(new FileReader("file-VIQ-149.txt"))) {
+    	try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = reader.readLine()) != null) {
             	
