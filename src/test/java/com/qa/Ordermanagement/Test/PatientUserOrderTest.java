@@ -130,25 +130,27 @@ public class PatientUserOrderTest extends TestBase {
 		Thread.sleep(5000);
 	}
 	@Test(priority=7,dependsOnMethods= {"clickonsubmitTest"})
-	public void captureToastMessage()
+	public void captureToastMessage() throws InterruptedException
 	{
 		PatientUserHomePage puhomepage = new PatientUserHomePage(driver);
 		String Toastmsg=puhomepage.getToastMessage();
 		String checkmsg="success";
 		Assert.assertTrue(Toastmsg.contains(checkmsg));
+		Thread.sleep(3000);
 	
 	}
 	
 	@Test(priority=8,dependsOnMethods= {"captureToastMessage"})
-	public void writetofileOrderId()
+	public void writetofileOrderId() throws InterruptedException
 	{
 		UtilitiesforOMS uoms = new UtilitiesforOMS();
 		PatientUserHomePage puhomepage = new PatientUserHomePage(driver);
-		
+		Thread.sleep(1000);
 		//captureOrderID 
 		String OrderID=puhomepage.fetchOrderID();
 		//and write to text file
 		if(OrderID!=null) {
+			System.out.println("Order ID:" +OrderID);
 		uoms.writetotextfile(OrderID);
 		}else
 		{System.out.println("order ID was empty");
