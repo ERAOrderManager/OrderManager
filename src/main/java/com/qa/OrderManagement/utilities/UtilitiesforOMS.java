@@ -80,17 +80,16 @@ public class UtilitiesforOMS
     {
            // Write the title to a text file
     	String OrderID =oID;
-		/*
-		 * String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-		 * //String destination = System.getProperty("user.dir") + "/Screenshots/" +
-		 * screenshotName + dateName + ".png" String destination =
-		 * System.getProperty("user.dir") + "/TextFile/" + OrderID +"-" + dateName +
-		 * ".txt"; System.out.println("destination "+destination); File finalDestination
-		 * = new File(destination);
-		 * System.out.println("finalDestination "+finalDestination);
-		 */
-    	//"file"+OrderID+".txt"
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("file-"+ OrderID +".txt")))
+		String filePath = System.getProperty("user.dir") + "/InputTextFiles/" +"file-"+OrderID+".txt";
+        System.out.println("File Path:"+filePath);
+        // Create a File object
+        File file = new File(filePath);
+
+        // Ensure the parent directories exist
+        file.getParentFile().mkdirs();
+    	
+    	
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
         {
             writer.write(OrderID);
             System.out.println("Successfully written to the file.");
