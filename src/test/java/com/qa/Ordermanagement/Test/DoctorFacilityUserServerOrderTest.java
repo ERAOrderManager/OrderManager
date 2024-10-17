@@ -19,7 +19,8 @@ import com.qa.OrderManagement.utilities.UtilitiesforOMS;
 
 public class DoctorFacilityUserServerOrderTest extends TestBase {
 	public List<String> OrderID ;
-	public String Rfilenamepath ="file-VIQ-165.txt";
+	public String Rfilenamepath ="InputTextFiles\\file-OrderID.txt";
+	public String sOrderID;
 	public DoctorFacilityUserServerOrderTest()
 	{
 		super();
@@ -53,16 +54,18 @@ public void clickonNewRequestTest() throws InterruptedException
 @Test(priority = 3,dependsOnMethods = {"clickonNewRequestTest"})
 public void fetchorderidfromfileandsearch()
 {
-	  UtilitiesforOMS uOMS = new UtilitiesforOMS();
-	  DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
-	  OrderID=uOMS.readfromtextfile(Rfilenamepath);
+	
+	  UtilitiesforOMS uOMS = new UtilitiesforOMS(); DoctorFacilityHomePage
+	  Dhomepage= new DoctorFacilityHomePage(driver);
+	  OrderID=uOMS.readfromtextfile(Rfilenamepath); 
 	  for(String order :OrderID)
 	  {
 	  System.out.println("Fetched Order ID: "+order +OrderID.size());
-
-      String sOrderID=order;
-	  Dhomepage.searchField(sOrderID);
+	  
+	  String sOrderID=order.trim(); 
+	  Dhomepage.searchField(sOrderID); 
 	  }
+	 
 }
 
 @Test(priority = 4,dependsOnMethods = {"fetchorderidfromfileandsearch"})
@@ -79,9 +82,19 @@ public void fetchOrderID()
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	String rID=Dhomepage.FetchRequestID();
 	System.out.println("RequestID: "+rID);
-	Assert.assertEquals(rID, OrderID);
+	  
+	UtilitiesforOMS uOMS = new UtilitiesforOMS();
+	OrderID=uOMS.readfromtextfile(Rfilenamepath);
+	  
+	for(String order :OrderID)
+	  {
+	  System.out.println("Fetched Order ID: "+order +OrderID.size());
 
-
+       String sOrderID=order.trim();
+       Assert.assertEquals(rID.trim(), sOrderID.trim());
+  
+	  }
+ 
 }
 @Test(priority = 6,dependsOnMethods = {"fetchOrderID"})
 public void selectInternalstatusTest() throws InterruptedException

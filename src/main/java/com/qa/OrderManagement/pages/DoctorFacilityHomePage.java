@@ -30,7 +30,7 @@ WebElement searchField;
 @FindBy(xpath="(//a[contains(@href,'/admin/document-request/')])[1]")
 WebElement openOrder;
 
-@FindBy(xpath="//p[contains(@class,'text-white') and @xpath='1']")
+@FindBy(xpath="(//p[contains(@class,'text-white')])[1]")
 WebElement RequestID;
 
 @FindBy(xpath="(//div[@class='select__indicators css-1wy0on6'] )[3]")
@@ -71,7 +71,7 @@ public void clickonnewRequest()
 
 public void searchField(String orderID)
 {
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[1]/input[contains(@placeholder,'Search..') and @type='text']")));
 	searchField.sendKeys(orderID);
 }
@@ -85,8 +85,8 @@ public void clickOrderid()
 
 public String FetchRequestID()
 {
-	//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-	//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(@class,'text-white') and @xpath='1']")));
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//p[contains(@class,'text-white')])[1]")));
 	String requestid=RequestID.getText();
 	return requestid;
 }

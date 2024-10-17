@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-16T08:57:03 IST" name="Default suite" finished-at="2024-10-16T08:58:57 IST" duration-ms="113523">
+  <suite started-at="2024-10-17T06:28:15 IST" name="Default suite" finished-at="2024-10-17T06:28:46 IST" duration-ms="30843">
     <groups>
     </groups>
-    <test started-at="2024-10-16T08:57:03 IST" name="Default test" finished-at="2024-10-16T08:58:57 IST" duration-ms="113523">
-      <class name="com.qa.Ordermanagement.Test.PatientUserOrderTest">
-        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@74f6c5d8]" started-at="2024-10-16T08:57:03 IST" name="setup" finished-at="2024-10-16T08:57:06 IST" duration-ms="3279" status="PASS">
+    <test started-at="2024-10-17T06:28:15 IST" name="Default test" finished-at="2024-10-17T06:28:46 IST" duration-ms="30843">
+      <class name="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@56dc1551]" started-at="2024-10-17T06:28:15 IST" name="setup" finished-at="2024-10-17T06:28:19 IST" duration-ms="4652" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1a464fa3]]>
+                <![CDATA[org.testng.TestRunner@66de00f2]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="patientuserOrderCreationTest()[pri:1, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@74f6c5d8]" started-at="2024-10-16T08:57:06 IST" name="patientuserOrderCreationTest" finished-at="2024-10-16T08:57:32 IST" duration-ms="25244" status="PASS">
+        <test-method signature="DoctorFacilityUserLoginTest()[pri:1, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@56dc1551]" started-at="2024-10-17T06:28:19 IST" name="DoctorFacilityUserLoginTest" finished-at="2024-10-17T06:28:22 IST" duration-ms="2555" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- patientuserOrderCreationTest -->
-        <test-method signature="uploadpassportfrontTest()[pri:2, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@74f6c5d8]" started-at="2024-10-16T08:57:32 IST" name="uploadpassportfrontTest" finished-at="2024-10-16T08:57:49 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.patientuserOrderCreationTest" duration-ms="17316" status="PASS">
+        </test-method> <!-- DoctorFacilityUserLoginTest -->
+        <test-method signature="clickonNewRequestTest()[pri:2, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@56dc1551]" started-at="2024-10-17T06:28:22 IST" name="clickonNewRequestTest" finished-at="2024-10-17T06:28:27 IST" depends-on-methods="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.DoctorFacilityUserLoginTest" duration-ms="5071" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- uploadpassportfrontTest -->
-        <test-method signature="uploadpassportbackpageTest()[pri:3, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@74f6c5d8]" started-at="2024-10-16T08:57:49 IST" name="uploadpassportbackpageTest" finished-at="2024-10-16T08:58:08 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadpassportfrontTest" duration-ms="19309" status="PASS">
+        </test-method> <!-- clickonNewRequestTest -->
+        <test-method signature="fetchorderidfromfileandsearch()[pri:3, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@56dc1551]" started-at="2024-10-17T06:28:27 IST" name="fetchorderidfromfileandsearch" finished-at="2024-10-17T06:28:27 IST" depends-on-methods="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.clickonNewRequestTest" duration-ms="347" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- uploadpassportbackpageTest -->
-        <test-method signature="uploadHippaDeclaration()[pri:4, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@74f6c5d8]" started-at="2024-10-16T08:58:08 IST" name="uploadHippaDeclaration" finished-at="2024-10-16T08:58:31 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadpassportbackpageTest" duration-ms="23306" status="PASS">
+        </test-method> <!-- fetchorderidfromfileandsearch -->
+        <test-method signature="clickonOrderID()[pri:4, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@56dc1551]" started-at="2024-10-17T06:28:27 IST" name="clickonOrderID" finished-at="2024-10-17T06:28:31 IST" depends-on-methods="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.fetchorderidfromfileandsearch" duration-ms="3172" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- uploadHippaDeclaration -->
-        <test-method signature="checkTermsandConditions()[pri:5, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@74f6c5d8]" started-at="2024-10-16T08:58:31 IST" name="checkTermsandConditions" finished-at="2024-10-16T08:58:32 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.uploadHippaDeclaration" duration-ms="160" status="PASS">
+        </test-method> <!-- clickonOrderID -->
+        <test-method signature="fetchOrderID()[pri:5, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@56dc1551]" started-at="2024-10-17T06:28:31 IST" name="fetchOrderID" finished-at="2024-10-17T06:28:31 IST" depends-on-methods="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.clickonOrderID" duration-ms="100" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkTermsandConditions -->
-        <test-method signature="clickonsubmitTest()[pri:6, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@74f6c5d8]" started-at="2024-10-16T08:58:32 IST" name="clickonsubmitTest" finished-at="2024-10-16T08:58:37 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.checkTermsandConditions" duration-ms="5190" status="PASS">
+        </test-method> <!-- fetchOrderID -->
+        <test-method signature="selectInternalstatusTest()[pri:6, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@56dc1551]" started-at="2024-10-17T06:28:31 IST" name="selectInternalstatusTest" finished-at="2024-10-17T06:28:34 IST" depends-on-methods="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.fetchOrderID" duration-ms="3268" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickonsubmitTest -->
-        <test-method signature="captureToastMessage()[pri:7, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@74f6c5d8]" started-at="2024-10-16T08:58:37 IST" name="captureToastMessage" finished-at="2024-10-16T08:58:41 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.clickonsubmitTest" duration-ms="3943" status="PASS">
+        </test-method> <!-- selectInternalstatusTest -->
+        <test-method signature="updateOrderDetails()[pri:7, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@56dc1551]" started-at="2024-10-17T06:28:34 IST" name="updateOrderDetails" finished-at="2024-10-17T06:28:38 IST" depends-on-methods="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.selectInternalstatusTest" duration-ms="4145" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- captureToastMessage -->
-        <test-method signature="writetofileOrderId()[pri:8, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@74f6c5d8]" started-at="2024-10-16T08:58:41 IST" name="writetofileOrderId" finished-at="2024-10-16T08:58:42 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.captureToastMessage" duration-ms="1079" status="PASS">
+        </test-method> <!-- updateOrderDetails -->
+        <test-method signature="clickonfiletab()[pri:8, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@56dc1551]" started-at="2024-10-17T06:28:38 IST" name="clickonfiletab" finished-at="2024-10-17T06:28:41 IST" depends-on-methods="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.updateOrderDetails" duration-ms="3178" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- writetofileOrderId -->
-        <test-method signature="ProcesspaymentPage()[pri:9, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@74f6c5d8]" started-at="2024-10-16T08:58:42 IST" name="ProcesspaymentPage" finished-at="2024-10-16T08:58:56 IST" depends-on-methods="com.qa.Ordermanagement.Test.PatientUserOrderTest.writetofileOrderId" duration-ms="14124" status="PASS">
+        </test-method> <!-- clickonfiletab -->
+        <test-method signature="uploadbutton()[pri:9, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@56dc1551]" started-at="2024-10-17T06:28:41 IST" name="uploadbutton" finished-at="2024-10-17T06:28:43 IST" depends-on-methods="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.clickonfiletab" duration-ms="2122" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ProcesspaymentPage -->
-        <test-method is-config="true" signature="closebrowsers()[pri:0, instance:com.qa.Ordermanagement.Test.PatientUserOrderTest@74f6c5d8]" started-at="2024-10-16T08:58:56 IST" name="closebrowsers" finished-at="2024-10-16T08:58:57 IST" duration-ms="524" status="PASS">
+        </test-method> <!-- uploadbutton -->
+        <test-method signature="clickonbrowsefiles()[pri:10, instance:com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest@56dc1551]" started-at="2024-10-17T06:28:43 IST" name="clickonbrowsefiles" finished-at="2024-10-17T06:28:46 IST" depends-on-methods="com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest.uploadbutton" duration-ms="2151" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closebrowsers -->
-      </class> <!-- com.qa.Ordermanagement.Test.PatientUserOrderTest -->
+        </test-method> <!-- clickonbrowsefiles -->
+      </class> <!-- com.qa.Ordermanagement.Test.DoctorFacilityUserServerOrderTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

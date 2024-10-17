@@ -80,7 +80,7 @@ public class UtilitiesforOMS
     {
            // Write the title to a text file
     	String OrderID =oID;
-		String filePath = System.getProperty("user.dir") + "/InputTextFiles/" +"file-"+OrderID+".txt";
+		String filePath = System.getProperty("user.dir") + "/InputTextFiles/" +"file-OrderID.txt";
         System.out.println("File Path:"+filePath);
         // Create a File object
         File file = new File(filePath);
