@@ -1,5 +1,6 @@
 package com.qa.Ordermanagement.Test;
 
+import java.awt.AWTException;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -21,6 +22,7 @@ public class DoctorFacilityUserServerOrderTest extends TestBase {
 	public List<String> OrderID ;
 	public String Rfilenamepath ="InputTextFiles\\file-OrderID.txt";
 	public String sOrderID;
+	public String fpath = "C:\\Users\\krish\\OneDrive\\Desktop\\sep5_EC.pdf";
 	public DoctorFacilityUserServerOrderTest()
 	{
 		super();
@@ -52,7 +54,7 @@ public void clickonNewRequestTest() throws InterruptedException
 	  
 }
 @Test(priority = 3,dependsOnMethods = {"clickonNewRequestTest"})
-public void fetchorderidfromfileandsearch()
+public void fetchorderidfromfileandsearch() throws InterruptedException
 {
 	
 	  UtilitiesforOMS uOMS = new UtilitiesforOMS(); DoctorFacilityHomePage
@@ -62,8 +64,10 @@ public void fetchorderidfromfileandsearch()
 	  {
 	  System.out.println("Fetched Order ID: "+order +OrderID.size());
 	  
-	  String sOrderID=order.trim(); 
-	  Dhomepage.searchField(sOrderID); 
+	  String sOrderID=order.trim();
+	  System.out.println("sOrderID "+sOrderID);
+	  Dhomepage.searchField(sOrderID);
+	  Thread.sleep(3000);
 	  }
 	 
 }
@@ -130,12 +134,21 @@ public void uploadbutton() throws InterruptedException
 	Dhomepage.clickonuploadbutton();
 }
 @Test(priority = 10,dependsOnMethods = {"uploadbutton"})
-public void clickonbrowsefiles() throws InterruptedException 
+public void clickonbrowsefiles() throws InterruptedException, AWTException 
 
 {
 	Thread.sleep(2000);
 	DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
 	Dhomepage.browsefile();
+	Thread.sleep(4000);
+	UtilitiesforOMS upld = new UtilitiesforOMS ();
+	upld.fileupload(fpath);
+	Thread.sleep(2000);
+	Dhomepage.uploadfile1.click();
+	Thread.sleep(1000);
+	Dhomepage.ClickonDonebtn.click();
+	Thread.sleep(1000);
+	Dhomepage.GeneratePDF.click();
 }
 
 }

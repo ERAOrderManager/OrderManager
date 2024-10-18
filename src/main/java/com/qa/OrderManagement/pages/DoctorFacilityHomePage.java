@@ -54,8 +54,20 @@ WebElement popupCancelButton;
 @FindBy(xpath="//span[text()='Upload']")
 WebElement upload;
 
-@FindBy(xpath="//div[@class='uppy-Dashboard-inner']")
+@FindBy(xpath="//div[@class='uppy-Dashboard-AddFiles-title']")
 WebElement uploadfilewindow;
+
+@FindBy(xpath="//div/button[@type='button']")
+WebElement clickonbrowsefile;
+
+public @FindBy(xpath="//div/button[@type='button' and @aria-label='Upload 1 file']")
+WebElement uploadfile1;
+
+public @FindBy(xpath="//div/button[text()='Done' and @type='button']")
+WebElement ClickonDonebtn;
+
+public @FindBy(xpath="//button[text()='Generate PDF']")
+WebElement GeneratePDF;
 
 public void readorderIDfromfile()
 {
@@ -123,11 +135,11 @@ public void browsefile()
 {
 	uploadfilewindow.click();
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Upload']")));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div/button[@type='button']")));
 	//upload.click();
 	
 	JavascriptExecutor bjs = (JavascriptExecutor)driver;
-	bjs.executeScript("arguments[0].click()", upload);
+	bjs.executeScript("arguments[0].click()", clickonbrowsefile);
 }
 
 }
