@@ -33,7 +33,7 @@ public class PatientUserHomePage extends TestBase
     @FindBy(xpath="//a[@href='/documentsRequest']")
     WebElement newDocumentRequest;
     
-    @FindBy(xpath="//p[text()='Doctor Facility']")
+    @FindBy(xpath="//div/p[text()='Medical Facility']")
     WebElement DRSelecTypeasDF;
     
     @FindBy(xpath="//p[text()='Attorney Office']")
@@ -139,15 +139,21 @@ public class PatientUserHomePage extends TestBase
 	
 	  public void paymentRemainder() 
 	  { 
-		  if(paymentDialog.isDisplayed())
-		  {
-		  paymentDialog.click();
-	      ClosePaymentReminderBtn.click();
-	      System.out.println("I am on Dialog");
-		  }else
-		  {System.out.println("No Dialog");}
+		  try {
+			if(paymentDialog.isDisplayed())
+			  {
+			  paymentDialog.click();
+			  ClosePaymentReminderBtn.click();
+			  System.out.println("I am on Dialog");
+			  }else
+			  {System.out.println("No Dialog");}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	 }
    
+	  
     public void newdocumentRequest() 
     {
     	newDocumentRequest.click();
