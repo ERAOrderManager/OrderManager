@@ -54,9 +54,11 @@ public class PatientUserOrderTest extends TestBase {
 		Thread.sleep(2000);
 		puhomepage.ItemListclick();
 		Thread.sleep(2000);
-		js.executeScript("window.scrollBy(0,500)");
+		//js.executeScript("window.scrollBy(0,500)");
+		//Thread.sleep(1000);
+		driver.findElement(By.xpath(String.format("//div/p[normalize-space()='%s']",properties.getProperty("doctorFacility1")))).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath(String.format("//p[normalize-space()='%s']",properties.getProperty("doctorFacility1")))).click();
+		js.executeScript("window.scrollBy(0,500)");
 		puhomepage.requestTypeList();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']",properties.getProperty("RequestType")))).click();
@@ -155,6 +157,7 @@ public class PatientUserOrderTest extends TestBase {
 		}else
 		{System.out.println("order ID was empty");
 		}
+		Thread.sleep(3000);
 	}
 	@Test(priority=9,dependsOnMethods= {"writetofileOrderId"})
 	public void ProcesspaymentPage() throws InterruptedException 

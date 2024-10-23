@@ -18,12 +18,12 @@ import com.qa.OrderManagement.utilities.UtilitiesforOMS;
 
 @Listeners(TestListener.class)
 
-public class DoctorFacilityUserServerOrderTest extends TestBase {
+public class MedicalFacilityUserServerOrderTest extends TestBase {
 	public List<String> OrderID ;
 	public String Rfilenamepath ="InputTextFiles\\file-OrderID.txt";
 	public String sOrderID;
 	public String fpath = "C:\\Users\\krish\\OneDrive\\Desktop\\sep5_EC.pdf";
-	public DoctorFacilityUserServerOrderTest()
+	public MedicalFacilityUserServerOrderTest()
 	{
 		super();
 		
@@ -38,14 +38,14 @@ public class DoctorFacilityUserServerOrderTest extends TestBase {
  
   
   @Test(priority=1)
-  public void DoctorFacilityUserLoginTest() throws InterruptedException
+  public void MedicalFacilityUserLoginTest() throws InterruptedException
   {
 	  LoginPage loginpage = new LoginPage(driver);
 	  loginpage.login(properties.getProperty("doctorFacilityUser"), properties.getProperty("Password"));
 	  Thread.sleep(2000);	  
   }
   
-@Test(priority = 2,dependsOnMethods = {"DoctorFacilityUserLoginTest"})
+@Test(priority = 2,dependsOnMethods = {"MedicalFacilityUserLoginTest"})
 public void clickonNewRequestTest() throws InterruptedException
 {
 	  DoctorFacilityHomePage Dhomepage= new DoctorFacilityHomePage(driver);
