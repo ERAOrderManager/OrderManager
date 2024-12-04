@@ -7,9 +7,9 @@
         <methods>
           <include name="clickonNewRequestTest"/>
           <include name="updateOrderDetails"/>
+          <include name="clickonfiletab"/>
           <include name="clickonbrowsefiles"/>
           <include name="MedicalFacilityUserLoginTest"/>
-          <include name="clickonfiletab"/>
           <include name="fetchOrderID"/>
           <include name="clickonOrderID"/>
           <include name="setup"/>

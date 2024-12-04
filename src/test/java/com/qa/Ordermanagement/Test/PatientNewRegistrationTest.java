@@ -16,6 +16,7 @@ import java.util.List;
 @Listeners(TestListener.class)
 public class PatientNewRegistrationTest extends TestBase {
 	
+	
 	public PatientNewRegistrationTest()
 	{
 		super();
@@ -27,7 +28,7 @@ public class PatientNewRegistrationTest extends TestBase {
 		this.driver=initialization();
 		context.setAttribute("WebDriver", this.driver);
 	}
-	
+
 	@Test(priority=1 )
 	public void clickonUserSignup() throws InterruptedException
 	{
@@ -50,7 +51,7 @@ public class PatientNewRegistrationTest extends TestBase {
 	public void PersonalInformation() throws InterruptedException
 	{
 		UtilitiesforOMS uoms = new UtilitiesforOMS();
-		List<String[]> testData=uoms.getData("C:\\Users\\krish\\OneDrive\\Documents\\DataOcean.xlsx","PatientUser");
+	    List<String[]> testData=uoms.getData("C:\\Users\\krish\\OneDrive\\Documents\\DataOcean.xlsx","PatientUser");
 		PatientNewRegistrationPage Pnrp = new PatientNewRegistrationPage(driver);
 		
 		for (String[] data : testData) {
@@ -115,4 +116,6 @@ public class PatientNewRegistrationTest extends TestBase {
 		 */;
 		
 	}
+	
 }
+
