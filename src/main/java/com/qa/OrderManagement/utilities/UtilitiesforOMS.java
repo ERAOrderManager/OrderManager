@@ -4,6 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 
 import com.qa.OrderManagement.Reports.TestListener;
@@ -118,6 +119,7 @@ public class UtilitiesforOMS
       return content;
     }
     //Reading from excel sheet -Data driven
+        
          public  List<String[]> getData(String filePath,String sheetName) {
         	DataFormatter formatter = new DataFormatter();
         	 

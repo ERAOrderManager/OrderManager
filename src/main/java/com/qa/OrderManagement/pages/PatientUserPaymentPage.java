@@ -118,6 +118,8 @@ public class PatientUserPaymentPage extends TestBase{
 	}
 	public void clickonPaynowbtn() {
 		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button/span[@id='button-text']")));
 		PaynowBtn.click();
 		System.out.println("Payment button clicked");
 		

@@ -32,7 +32,7 @@ public class TestBase {
    {
 		FileInputStream fileInputStream;
 		try {
-			fileInputStream = new FileInputStream("config.properties");
+			fileInputStream = new FileInputStream("C:\\Users\\krish\\KrishnaTest\\OrderManager\\src\\main\\java\\com\\qa\\OrderManagement\\config\\config.properties");
 			try {
 				properties.load(fileInputStream);
 			} catch (IOException e) {

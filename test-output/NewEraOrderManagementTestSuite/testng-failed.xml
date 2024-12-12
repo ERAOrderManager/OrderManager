@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [NewEraOrderManagementTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="PatientUser and DoctorFacilityTest Smoke Test(failed)">
+    <classes>
+      <class name="com.qa.Ordermanagement.Test.MedicalFacilityUserServerOrderTest">
+        <methods>
+          <include name="clickonNewRequestTest"/>
+          <include name="updateOrderDetails"/>
+          <include name="clickonfiletab"/>
+          <include name="MedicalFacilityUserLoginTest"/>
+          <include name="clickonbrowsefiles"/>
+          <include name="fetchOrderID"/>
+          <include name="clickonOrderID"/>
+          <include name="setup"/>
+          <include name="fetchorderidfromfileandsearch"/>
+          <include name="selectInternalstatusTest"/>
+          <include name="uploadbutton"/>
+        </methods>
+      </class> <!-- com.qa.Ordermanagement.Test.MedicalFacilityUserServerOrderTest -->
+      <class name="com.qa.Ordermanagement.Test.PatientUserOrderTest">
+        <methods>
+          <include name="captureToastMessage"/>
+          <include name="patientuserOrderCreationTest"/>
+          <include name="setup"/>
+          <include name="closebrowsers"/>
+          <include name="uploadHippaDeclaration"/>
+          <include name="clickonsubmitTest"/>
+          <include name="uploadpassportbackpageTest"/>
+          <include name="uploadpassportfrontTest"/>
+          <include name="checkTermsandConditions"/>
+          <include name="writetofileOrderId"/>
+          <include name="ProcesspaymentPage"/>
+        </methods>
+      </class> <!-- com.qa.Ordermanagement.Test.PatientUserOrderTest -->
+    </classes>
+  </test> <!-- PatientUser and DoctorFacilityTest Smoke Test(failed) -->
+</suite> <!-- Failed suite [NewEraOrderManagementTestSuite] -->

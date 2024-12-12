@@ -1,6 +1,7 @@
 package com.qa.Ordermanagement.Test;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
@@ -32,35 +33,47 @@ public class PatientNewRegistrationTest extends TestBase {
 	@Test(priority=1 )
 	public void clickonUserSignup() throws InterruptedException
 	{
-		LoginPage loginpage = new LoginPage(driver);
-		loginpage.newUserSignup();
-		Thread.sleep(3000);
+		/*
+		 * LoginPage loginpage = new LoginPage(driver); loginpage.newUserSignup();
+		 * Thread.sleep(3000);
+		 */
 	}
 		
 	
 	@Test(priority=2,dependsOnMethods= {"clickonUserSignup"})
 	public void patientuserSignup() throws InterruptedException
 	{
-		UsersSignUpPage Usup = new UsersSignUpPage(driver);
-		Usup.clickonPatientUserSignup();
-		Thread.sleep(3000);
+		/*
+		 * UsersSignUpPage Usup = new UsersSignUpPage(driver);
+		 * Usup.clickonPatientUserSignup(); Thread.sleep(3000);
+		 */
 	}
 	
 
 	@Test(priority=3,dependsOnMethods= {"patientuserSignup"})
-	public void PersonalInformation() throws InterruptedException
+		public void PersonalInformation() throws InterruptedException
 	{
 		UtilitiesforOMS uoms = new UtilitiesforOMS();
 	    List<String[]> testData=uoms.getData("C:\\Users\\krish\\OneDrive\\Documents\\DataOcean.xlsx","PatientUser");
-		PatientNewRegistrationPage Pnrp = new PatientNewRegistrationPage(driver);
+		
+	    LoginPage loginpage;
+	    UsersSignUpPage Usup;
+	    PatientNewRegistrationPage Pnrp;
 		
 		for (String[] data : testData) {
+			
+			loginpage = new LoginPage(driver);
+			loginpage.newUserSignup();
+			Thread.sleep(3000);
+			Usup = new UsersSignUpPage(driver);
+			Usup.clickonPatientUserSignup();
+			Thread.sleep(3000);
 			/*
 			 * driver.findElement(By.id("username")).sendKeys(data[0]);
 			 * driver.findElement(By.id("password")).sendKeys(data[1]);
 			 * driver.findElement(By.id("loginButton")).click();
 			 */
-			
+			Pnrp = new PatientNewRegistrationPage(driver);
             System.out.println("Data1 :"+data[0]);
             System.out.println("Data2 :"+data[1]);
             System.out.println("Data3 :"+data[2]);
@@ -73,9 +86,9 @@ public class PatientNewRegistrationTest extends TestBase {
             System.out.println("Data10 :"+data[9]);
             System.out.println("Data11 :"+data[10]);
             
-            Pnrp.MFirstName.sendKeys(data[1]);
-    		Pnrp.MMiddleName.sendKeys(data[2]);
-    		Pnrp.MLastName.sendKeys(data[3]);
+            Pnrp.MFirstName.sendKeys(data[1]+1);
+    		Pnrp.MMiddleName.sendKeys(data[2]+1);
+    		Pnrp.MLastName.sendKeys(data[3]+1);
     		Pnrp.Memail.sendKeys(data[4]);
     		Pnrp.MDOB.sendKeys(data[5]);
     		Pnrp.MphoneNumber.sendKeys(data[6]);
@@ -95,10 +108,12 @@ public class PatientNewRegistrationTest extends TestBase {
     		driver.findElement(By.xpath(String.format("//span[normalize-space()='%s']",data[13]))).click();
     		Pnrp.Zipcode.sendKeys(data[14]);
     		Pnrp.Submit.click();
-            
+    		driver.navigate().back();
+    	    driver.navigate().refresh();
 
             // Add assertions or further test steps here
         }
+		
 		//Personal Info Tab
 		/*
 		 * Pnrp.MFirstName.sendKeys(data[1]); Pnrp.MMiddleName.sendKeys("Prasad");

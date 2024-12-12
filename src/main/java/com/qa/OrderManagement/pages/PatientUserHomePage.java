@@ -227,7 +227,7 @@ public void ClickonSubmit()
 
 public String getToastMessage()
 {
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(25));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='notification-description']")));
 	return ToastMessage.getText();
 	

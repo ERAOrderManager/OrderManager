@@ -70,6 +70,9 @@ public class PatientNewRegistrationPage extends TestBase{
 	public @FindBy(xpath="//button[@type='submit']")
 	WebElement Submit;
 	
+	public @FindBy(xpath="//span[contains(@class,'text-red-500')]")
+	WebElement resend;
+	
 //Actions
 	public void enterPatientUserDetail(String details)
 	{
